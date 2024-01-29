@@ -20,8 +20,16 @@ class _ShowCardWidget extends State<ShowCardWidget> {
       children: [
         Image.network(
           widget.cardEntity.mainTranslation!["wordPhoto"]["photo"],
-          loadingBuilder: (context, child, loadingprogress) {
-            return const CircularProgressIndicator();
+          loadingBuilder: (BuildContext context, Widget child,
+              ImageChunkEvent? loadingProgress) {
+            if (loadingProgress == null) {
+              return child;
+            }
+            return const Center(
+              child: CircularProgressIndicator(
+                color: Colors.red,
+              ),
+            );
           },
         ),
         SizedBox(

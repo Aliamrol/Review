@@ -44,6 +44,7 @@ dependencies:
   dio: ^5.4.0
   get_it: ^7.6.0
   talker: ^3.2.0
+  flutter_stepindicator: ^0.1.7
 
 
 dev_dependencies:
