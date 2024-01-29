@@ -39,7 +39,7 @@ class _ReviewPageState extends State<ReviewPage> {
         builder: (context, state) {
           if (state is FlashCardCompleteState) {
             List cards = state.lessonEntity.cards;
-            PageView.builder(itemBuilder: (context, int i) {
+            return PageView.builder(itemBuilder: (context, int i) {
               return ShowCardWidget(cardEntity: CardEntity.fromJson(cards[i]));
             });
           }

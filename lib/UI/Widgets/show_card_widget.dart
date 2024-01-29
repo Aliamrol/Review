@@ -13,6 +13,7 @@ class ShowCardWidget extends StatefulWidget {
 class _ShowCardWidget extends State<ShowCardWidget> {
   @override
   Widget build(BuildContext context) {
+    print("build");
     return Center(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,

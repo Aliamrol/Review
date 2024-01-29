@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:freezed/builder.dart';
 import 'package:meta/meta.dart';
 import 'package:uni/models/card_entity.dart';
 import 'package:uni/repository/repository.dart';
