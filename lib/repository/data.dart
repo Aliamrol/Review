@@ -1,15 +1,5 @@
 import 'package:dio/dio.dart';
 
 class Data {
-  Dio dio = Dio();
-
-  Future<Map<String, dynamic>> getDataJson(String apiUrl) async {
-    var response = await dio.get(apiUrl);
-    return response.data;
-  }
-
-  Future<int?> postDataJson(json, apiUrl) async {
-    var response = await dio.postUri(apiUrl, data: json);
-    return response.statusCode;
-  }
+  static String lessonApiUrl = "https://api.langeek.co/v1/c/en/subcategory/1";
 }

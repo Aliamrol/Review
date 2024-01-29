@@ -22,7 +22,7 @@ class _ShowCardWidget extends State<ShowCardWidget> {
           height: MediaQuery.of(context).size.height * 0.02,
         ),
         Text(
-          widget.cardEntity.id.toString() ?? "TITLE",
+          widget.cardEntity.title ?? "TITLE",
           style: TextStyle(
               fontSize: MediaQuery.of(context).textScaleFactor * 50,
               fontWeight: FontWeight.w400),
