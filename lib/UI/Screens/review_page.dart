@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/flash_card_bloc.dart';
+import '../../bloc/flash_card_state.dart';
 import '../../models/card_entity.dart';
 import '../Widgets/show_card_widget.dart';
 
@@ -65,3 +66,9 @@ class _ReviewPageState extends State<ReviewPage> {
     );
   }
 }
+
+
+
+/// dio
+/// dependency injection
+/// freezed

@@ -1,7 +1,5 @@
+import '../models/lesson_entity.dart';
 
-
-
-part of 'flash_card_bloc.dart';
 abstract class FlashCardState {
   late LessonEntity lessonEntity;
 }

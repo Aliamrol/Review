@@ -1,15 +1,13 @@
 import 'package:bloc/bloc.dart';
-import 'package:freezed/builder.dart';
 import 'package:meta/meta.dart';
 import 'package:uni/models/card_entity.dart';
 import 'package:uni/repository/repository.dart';
 
 import '../models/lesson_entity.dart';
 import '../repository/data.dart';
+import 'flash_card_state.dart';
 
 part 'flash_card_event.dart';
-
-part 'flash_card_state.dart';
 
 class FlashCardBloc extends Bloc<FlashCardEvent, FlashCardState> {
   late LessonEntity lessonEntity;
