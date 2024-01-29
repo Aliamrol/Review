@@ -13,7 +13,6 @@ class ReviewPage extends StatefulWidget {
 
   final String title;
 
-
   @override
   State<ReviewPage> createState() => _ReviewPageState();
 }
@@ -60,28 +59,26 @@ class _ReviewPageState extends State<ReviewPage> {
             ));
           }
           if (state is FlashCardErrorState) {
-            // return Column(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Center(
-            //       child: Text(
-            //         state.msgError.toString(),
-            //         style: const TextStyle(color: Colors.red, fontSize: 10),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       height: 100,
-            //     ),
-            //     ElevatedButton(
-            //         onPressed: () {
-            //           BlocProvider.of<ReviewBloc>(context)
-            //               .add(ReviewInitialEvent());
-            //         },
-            //         child: const Text("Try again"))
-            //   ],
-            // );
-
-            return ElevatedButton(onPressed: (){}, child: Text("Try Again"));
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    state.msgError.toString(),
+                    style: const TextStyle(color: Colors.red, fontSize: 10),
+                  ),
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      BlocProvider.of<ReviewBloc>(context)
+                          .add(ReviewInitialEvent());
+                    },
+                    child: const Text("Try again"))
+              ],
+            );
           }
           return Container();
         },
