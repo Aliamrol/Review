@@ -42,6 +42,8 @@ dependencies:
   json_serializable: ^6.6.1
   json_annotation: ^4.8.0
   dio: ^5.4.0
+  get_it: ^7.6.0
+  talker: ^3.2.0
 
 
 dev_dependencies:

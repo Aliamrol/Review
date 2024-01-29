@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:uni/bloc/flash_card_bloc.dart';
 import 'package:flutter/material.dart';
-
+import 'ReviewBloc/review_bloc.dart';
 import 'UI/Screens/review_page.dart';
+import 'locator.dart';
 
-void main() {
+void main() async {
+  await setup();
   runApp(const MyApp());
 }
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (context) => FlashCardBloc(),
+        create: (context) => ReviewBloc(),
         child: const ReviewPage(title: 'Flutter Demo Home Page'),
       ),
     );

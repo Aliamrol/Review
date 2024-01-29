@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import '../../models/card_entity.dart';
+import 'package:flutter/material.dart';
+import '../../Entities/card_entity.dart';
 
 class ShowCardWidget extends StatefulWidget {
   late CardEntity cardEntity;
@@ -13,12 +14,16 @@ class ShowCardWidget extends StatefulWidget {
 class _ShowCardWidget extends State<ShowCardWidget> {
   @override
   Widget build(BuildContext context) {
-    print("build");
     return Center(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Image.asset(widget.imageUrl),
+        Image.network(
+          widget.cardEntity.mainTranslation!["wordPhoto"]["photo"],
+          loadingBuilder: (context, child, loadingprogress) {
+            return const CircularProgressIndicator();
+          },
+        ),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.02,
         ),

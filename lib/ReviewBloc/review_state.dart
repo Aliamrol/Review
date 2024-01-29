@@ -1,4 +1,4 @@
-import '../models/lesson_entity.dart';
+import '../Entities/lesson_entity.dart';
 
 abstract class FlashCardState {
   late LessonEntity lessonEntity;
@@ -14,6 +14,10 @@ class FlashCardCompleteState extends FlashCardState {
   }
 }
 
-class FlashCardErrorState extends FlashCardState {}
+class FlashCardErrorState extends FlashCardState {
+  String? msgError;
+
+  FlashCardErrorState(this.msgError);
+}
 
 // Error State for network
