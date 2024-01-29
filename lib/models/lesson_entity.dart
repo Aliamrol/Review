@@ -41,7 +41,4 @@ class LessonEntity {
       _$LessonEntityFromJson(json);
 
   Map<String, dynamic> toJson(instance) => _$LessonEntityToJson(this);
-
-
-
 }

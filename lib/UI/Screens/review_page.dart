@@ -19,6 +19,13 @@ class _ReviewPageState extends State<ReviewPage> {
   final PageController _myPage = PageController();
 
   @override
+  void initState() {
+    // request Data and bloc set loading State
+    BlocProvider.of<FlashCardBloc>(context).add(FlashCardInitialEvent());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,13 +35,32 @@ class _ReviewPageState extends State<ReviewPage> {
         ),
       ),
       // must implement with page view builder
-      body: PageView(
-        controller: _myPage,
-        children: [
-          ShowCardWidget(cardEntity: CardEntity(id: 1, title: "HELLO")),
-          ShowCardWidget(cardEntity: CardEntity(id: 2, title: "BYE")),
-          ShowCardWidget(cardEntity: CardEntity(id: 3, title: "HOW R U"))
-        ],
+      body: BlocBuilder<FlashCardBloc, FlashCardState>(
+        builder: (context, state) {
+          if (state is FlashCardCompleteState) {
+            List cards = state.lessonEntity.cards;
+            PageView.builder(itemBuilder: (context, int i) {
+              return ShowCardWidget(cardEntity: CardEntity.fromJson(cards[i]));
+            });
+          }
+          if (state is FlashCardLoadingState) {
+            return const Center(
+              child: Text(
+                "Loading",
+                style: TextStyle(color: Colors.blue, fontSize: 40),
+              ),
+            );
+          }
+          if (state is FlashCardErrorState) {
+            return const Center(
+              child: Text(
+                "Error 404 not Found",
+                style: TextStyle(color: Colors.red, fontSize: 30),
+              ),
+            );
+          }
+          return Container();
+        },
       ),
     );
   }

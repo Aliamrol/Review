@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (context) => FlashCardBloc(),
-        child: ReviewPage(title: 'Flutter Demo Home Page'),
+        child: const ReviewPage(title: 'Flutter Demo Home Page'),
       ),
     );
   }

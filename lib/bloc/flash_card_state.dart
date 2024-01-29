@@ -1,45 +1,19 @@
 part of 'flash_card_bloc.dart';
 
 abstract class FlashCardState {
-  late String imageUrl;
-  late String originalTitle;
-  late String translation;
-  late String pronunciation;
-  late final CardEntity cardEntity;
-
+  late LessonEntity lessonEntity;
 }
 
-class FlashCardInitialState extends FlashCardState {
-  FlashCardPreviousState() {
-    this.imageUrl = "";
-    this.originalTitle = "Welcome";
-    this.pronunciation = "English , Persian";
-    this.translation = "Thank You";
+class FlashCardLoadingState extends FlashCardState {
+  FlashCardLoadingState();
+}
+
+class FlashCardCompleteState extends FlashCardState {
+  FlashCardCompleteState.FlashCardCompleteState(lessonEntity) {
+    this.lessonEntity = lessonEntity;
   }
 }
 
-class FlashCardNextState extends FlashCardState {
-  FlashCardNextState(
-      {required imageUrl,
-      required originalTitle,
-      required translation,
-      required pronunciation}) {
-    this.imageUrl = imageUrl;
-    this.originalTitle = originalTitle;
-    this.translation = translation;
-    this.pronunciation = pronunciation;
-  }
-}
+class FlashCardErrorState extends FlashCardState {}
 
-class FlashCardBackState extends FlashCardState {
-  FlashCardBackState(
-      {required imageUrl,
-      required originalTitle,
-      required translation,
-      required pronunciation}) {
-    this.imageUrl = imageUrl;
-    this.originalTitle = originalTitle;
-    this.translation = translation;
-    this.pronunciation = pronunciation;
-  }
-}
+// Error State for network
