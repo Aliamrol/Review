@@ -19,36 +19,16 @@ class _ReviewPageState extends State<ReviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          ElevatedButton(
-              onPressed: () {
-                BlocProvider.of<FlashCardBloc>(context)
-                    .add(FlashCardBackEvent());
-              },
-              child: Text("Back")),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.60,
-          ),
-          ElevatedButton(
-              onPressed: () {
-                BlocProvider.of<FlashCardBloc>(context)
-                    .add(FlashCardNextEvent());
-              },
-              child: Text("Next")),
-        ],
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(CupertinoIcons.back),
+          onPressed: () {},
+        ),
       ),
-
       // must implement with page view builder
-      body: ShowCardWidget(
-        cardEntity: CardEntity(
-            imageUrl: '',
-            originalTitle: "",
-            pronunciation: "",
-            translation: ""),
-      ),
+      body: PageView.builder(
+          itemBuilder: (context, int) =>
+              ShowCardWidget(cardEntity: CardEntity(id: 1))),
     );
   }
 }

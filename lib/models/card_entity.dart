@@ -4,16 +4,25 @@ part 'card_entity.g.dart';
 
 @JsonSerializable()
 class CardEntity {
-  final String imageUrl;
-  final String originalTitle;
-  final String translation;
-  final String pronunciation;
+  final int id;
+  Map<String, dynamic>? mainTranslation;
+  String? type;
+  String? description;
+  int? position;
+  String? updatedAt;
+  String? title;
+  String? phonetic;
 
-  CardEntity(
-      {required this.imageUrl,
-      required this.originalTitle,
-      required this.translation,
-      required this.pronunciation});
+  CardEntity({
+    required this.id,
+    this.mainTranslation,
+    this.type,
+    this.description,
+    this.position,
+    this.updatedAt,
+    this.title,
+    this.phonetic,
+  });
 
   factory CardEntity.fromJson(Map<String, dynamic> json) =>
       _$CardEntityFromJson(json);
