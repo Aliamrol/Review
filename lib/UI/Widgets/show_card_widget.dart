@@ -1,16 +1,13 @@
-import 'package:feather_icons_svg/feather_icons_svg.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
 import '../../Entities/card_entity.dart';
-import '../../ReviewBloc/review_bloc.dart';
 
 class ShowCardWidget extends StatefulWidget {
-  late CardEntity cardEntity;
+  final CardEntity cardEntity;
+  final double value;
 
-  ShowCardWidget({super.key, required this.cardEntity});
+  const ShowCardWidget(
+      {super.key, required this.cardEntity, required this.value});
 
   @override
   State<StatefulWidget> createState() => _ShowCardWidget();
@@ -28,47 +25,69 @@ class _ShowCardWidget extends State<ShowCardWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.network(
-          widget.cardEntity.mainTranslation!["wordPhoto"]["photo"],
-          loadingBuilder: (BuildContext context, Widget child,
-              ImageChunkEvent? loadingProgress) {
-            if (loadingProgress == null) {
-              return child;
-            }
-            return const CircularProgressIndicator();
-          },
-          errorBuilder:
-              (BuildContext context, Object exception, StackTrace? stackTrace) {
-            return AlertDialog(
-              title: const Text("Error"),
-              content: const Text("Please Check connection"),
-              actions: [
-                ElevatedButton(onPressed: () {}, child: const Text("Again")),
-              ],
-            );
-          },
-        ),
+        // linear step indicator
+        Padding(
+            padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.02,
+                left: MediaQuery.of(context).size.width * 0.04,
+                right: MediaQuery.of(context).size.width * 0.04),
+            child: LinearProgressIndicator(
+              value: widget.value,
+            )),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
+          height: MediaQuery.of(context).size.height * 0.07,
         ),
-        Text(
-          widget.cardEntity.title ?? "TITLE",
-          style: TextStyle(
-              fontSize: MediaQuery.of(context).textScaleFactor * 50,
-              fontWeight: FontWeight.w400),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.008,
-        ),
-        Text(
-          widget.cardEntity.phonetic ?? "phonetic",
-          style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
-        ),
-        const SizedBox(
-          height: 100,
-        ),
-        Text(widget.cardEntity.description ??
-            "description description description")
+        // flash card
+        Column(
+          children: [
+            Center(
+              child: Image.network(
+                widget.cardEntity.mainTranslation!["wordPhoto"]["photo"],
+                loadingBuilder: (BuildContext context, Widget child,
+                    ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return Container(
+                    color: Colors.red,
+                  );
+                },
+                errorBuilder: (BuildContext context, Object exception,
+                    StackTrace? stackTrace) {
+                  return AlertDialog(
+                    title: const Text("Error"),
+                    content: const Text("Please Check connection"),
+                    actions: [
+                      ElevatedButton(
+                          onPressed: () {}, child: const Text("Again")),
+                    ],
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
+            ),
+            Text(
+              widget.cardEntity.title ?? "TITLE",
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).textScaleFactor * 50,
+                  fontWeight: FontWeight.w400),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.008,
+            ),
+            Text(
+              widget.cardEntity.phonetic ?? "phonetic",
+              style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            Text(widget.cardEntity.description ??
+                "description description description")
+          ],
+        )
       ],
     );
   }

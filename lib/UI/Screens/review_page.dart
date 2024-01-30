@@ -29,6 +29,8 @@ class _ReviewPageState extends State<ReviewPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("Width: ${MediaQuery.of(context).size.width}");
+    print("Height : ${MediaQuery.of(context).size.height}");
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -42,7 +44,7 @@ class _ReviewPageState extends State<ReviewPage> {
           if (state is FlashCardErrorState) {
             QuickAlert.show(
                 context: context,
-                type: QuickAlertType.error,
+                type: QuickAlertType.warning,
                 onConfirmBtnTap: () {
                   BlocProvider.of<ReviewBloc>(context)
                       .add(ReviewInitialEvent());
@@ -51,26 +53,35 @@ class _ReviewPageState extends State<ReviewPage> {
                 title: "Oops...",
                 text: "Please check internet connection");
           }
+          if (state is FlashCardLoadingState) {
+            QuickAlert.show(
+                context: context,
+                type: QuickAlertType.loading,
+                title: "Loading");
+          }
         },
         builder: (context, state) {
           if (state is FlashCardCompleteState) {
+            Navigator.of(context).pop();
             List cards = state.lessonEntity.cards;
             return PageView.builder(
                 controller: myPage,
                 itemCount: cards.length,
                 itemBuilder: (context, int i) {
                   return ShowCardWidget(
-                      cardEntity: CardEntity.fromJson(cards[i]));
+                    cardEntity: CardEntity.fromJson(cards[i]),
+                    value: i / cards.length,
+                  );
                 });
           }
-          if (state is FlashCardLoadingState) {
-            return const Center(
-                child: SizedBox(
-              width: 50,
-              height: 50,
-              child: CircularProgressIndicator(),
-            ));
-          }
+          // if (state is FlashCardLoadingState) {
+          //   return const Center(
+          //       child: SizedBox(
+          //     width: 50,
+          //     height: 50,
+          //     child: CircularProgressIndicator(),
+          //   ));
+          // }
           return Container();
         },
       ),

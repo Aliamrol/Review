@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:uni/locator.dart';
 import 'package:uni/repository/review_repository.dart';
 import '../Entities/lesson_entity.dart';
@@ -27,7 +28,9 @@ class ReviewBloc extends Bloc<ReviewEvent, FlashCardState> {
           lessonEntity = LessonEntity.fromJson(json!);
           emit(FlashCardCompleteState.FlashCardCompleteState(lessonEntity));
         } catch (e) {
-          print(e);
+          if (kDebugMode) {
+            print(e);
+          }
           emit(FlashCardErrorState(e.toString()));
         }
       }
