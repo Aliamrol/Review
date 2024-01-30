@@ -69,7 +69,7 @@ class _ReviewPageState extends State<ReviewPage> {
           }
           if (state is ReviewPreviousState) {
             _myPage.previousPage(
-                duration: Duration(microseconds: 1),
+                duration: const Duration(microseconds: 1),
                 curve: Curves.elasticInOut);
           }
           if (state is ReviewErrorState) {
@@ -103,10 +103,10 @@ class _ReviewPageState extends State<ReviewPage> {
             return PageView.builder(
                 controller: _myPage,
                 itemCount: cards.length,
-                itemBuilder: (context, int i) {
-                  var valueStepIndicator = i / cards.length;
+                itemBuilder: (context, int index) {
+                  var valueStepIndicator = index / (cards.length - 1);
                   return ShowCardWidget(
-                    cardEntity: CardEntity.fromJson(cards[i]),
+                    cardEntity: CardEntity.fromJson(cards[index]),
                     value: valueStepIndicator,
                   );
                 });
