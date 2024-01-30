@@ -16,8 +16,8 @@ class FlashCardCompleteState extends FlashCardState {
 
 class FlashCardErrorState extends FlashCardState {
   String? msgError;
-
-  FlashCardErrorState(this.msgError);
+  int? status;
+  FlashCardErrorState(this.msgError, this.status);
 }
 
 // Error State for network

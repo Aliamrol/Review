@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,15 +43,16 @@ class _ReviewPageState extends State<ReviewPage> {
       body: BlocConsumer<ReviewBloc, FlashCardState>(
         listener: (context, state) {
           if (state is FlashCardErrorState) {
+            Navigator.of(context).pop();
             QuickAlert.show(
                 context: context,
                 type: QuickAlertType.warning,
                 onConfirmBtnTap: () {
+                  Navigator.of(context).pop();
                   BlocProvider.of<ReviewBloc>(context)
                       .add(ReviewInitialEvent());
-                  Navigator.of(context).pop();
                 },
-                title: "Oops...",
+                title: "Error ${state.status}",
                 text: "Please check internet connection");
           }
           if (state is FlashCardLoadingState) {
@@ -74,14 +76,6 @@ class _ReviewPageState extends State<ReviewPage> {
                   );
                 });
           }
-          // if (state is FlashCardLoadingState) {
-          //   return const Center(
-          //       child: SizedBox(
-          //     width: 50,
-          //     height: 50,
-          //     child: CircularProgressIndicator(),
-          //   ));
-          // }
           return Container();
         },
       ),

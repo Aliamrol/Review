@@ -24,6 +24,8 @@ class CardEntity {
     this.phonetic,
   });
 
+  //
+
   factory CardEntity.fromJson(Map<String, dynamic> json) =>
       _$CardEntityFromJson(json);
 
