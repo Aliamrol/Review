@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quickalert/quickalert.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import '../../Entities/card_entity.dart';
 import '../../ReviewBloc/review_bloc.dart';
 import '../../ReviewBloc/review_state.dart';
@@ -17,7 +18,7 @@ class ReviewPage extends StatefulWidget {
 }
 
 class _ReviewPageState extends State<ReviewPage> {
-  final PageController _myPage = PageController();
+  final PageController myPage = PageController();
 
   @override
   void initState() {
@@ -53,10 +54,9 @@ class _ReviewPageState extends State<ReviewPage> {
         },
         builder: (context, state) {
           if (state is FlashCardCompleteState) {
-            print("Complete");
             List cards = state.lessonEntity.cards;
             return PageView.builder(
-                controller: _myPage,
+                controller: myPage,
                 itemCount: cards.length,
                 itemBuilder: (context, int i) {
                   return ShowCardWidget(
@@ -64,7 +64,6 @@ class _ReviewPageState extends State<ReviewPage> {
                 });
           }
           if (state is FlashCardLoadingState) {
-            print("Loading");
             return const Center(
                 child: SizedBox(
               width: 50,
