@@ -46,8 +46,8 @@ class _ReviewPageState extends State<ReviewPage> {
                         .add(ReviewPreviousEvent());
                   },
                   icon: const Icon(CupertinoIcons.arrow_left)),
-              const SizedBox(
-                width: 262,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.727777778,
               ),
               IconButton(
                   tooltip: "Next Page",
