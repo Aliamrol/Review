@@ -1,23 +1,26 @@
 import '../Entities/lesson_entity.dart';
 
-abstract class FlashCardState {
+abstract class ReviewState {
   late LessonEntity lessonEntity;
 }
 
-class FlashCardLoadingState extends FlashCardState {
-  FlashCardLoadingState();
+class ReviewLoadingState extends ReviewState {
+  ReviewLoadingState();
 }
 
-class FlashCardCompleteState extends FlashCardState {
-  FlashCardCompleteState.FlashCardCompleteState(lessonEntity) {
+class ReviewCompleteState extends ReviewState {
+  ReviewCompleteState.FlashCardCompleteState(lessonEntity) {
     this.lessonEntity = lessonEntity;
   }
 }
 
-class FlashCardErrorState extends FlashCardState {
+class ReviewErrorState extends ReviewState {
   String? msgError;
   int? status;
-  FlashCardErrorState(this.msgError, this.status);
+
+  ReviewErrorState(this.msgError, this.status);
 }
 
-// Error State for network
+class ReviewNextState extends ReviewState {}
+
+class ReviewPreviousState extends ReviewState {}

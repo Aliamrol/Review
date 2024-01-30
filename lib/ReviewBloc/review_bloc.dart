@@ -10,7 +10,7 @@ import 'review_state.dart';
 
 part 'review_event.dart';
 
-class ReviewBloc extends Bloc<ReviewEvent, FlashCardState> {
+class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   late LessonEntity lessonEntity;
 
   // online
@@ -20,25 +20,41 @@ class ReviewBloc extends Bloc<ReviewEvent, FlashCardState> {
   Map<String, dynamic>? json;
   Response? response;
 
-  ReviewBloc() : super(FlashCardLoadingState()) {
+  ReviewBloc() : super(ReviewLoadingState()) {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
-        emit(FlashCardLoadingState());
+        emit(ReviewLoadingState());
         try {
           response = await locator
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
           json = response?.data;
-          print("Status Code: ${response?.statusCode}");
-          print("Status msg : ${response?.statusMessage}");
+          if (kDebugMode) {
+            print("Status Code: ${response?.statusCode}");
+          }
+          if (kDebugMode) {
+            print("Status msg : ${response?.statusMessage}");
+          }
           lessonEntity = LessonEntity.fromJson(json!);
-          emit(FlashCardCompleteState.FlashCardCompleteState(lessonEntity));
+          emit(ReviewCompleteState.FlashCardCompleteState(lessonEntity));
         } catch (e) {
-          print("Status Code: ${response?.statusCode}");
-          print("Status msg : ${response?.statusMessage}");
-          print(e);
-          emit(FlashCardErrorState(e.toString(), response?.statusCode));
+          if (kDebugMode) {
+            print("Status Code: ${response?.statusCode}");
+          }
+          if (kDebugMode) {
+            print("Status msg : ${response?.statusMessage}");
+          }
+          if (kDebugMode) {
+            print(e);
+          }
+          emit(ReviewErrorState(e.toString(), response?.statusCode));
         }
+      }
+      if (event is ReviewNextEvent) {
+        emit(ReviewNextState());
+      }
+      if (event is ReviewPreviousEvent) {
+        emit(ReviewPreviousState());
       }
     });
   }

@@ -15,12 +15,6 @@ class ShowCardWidget extends StatefulWidget {
 
 class _ShowCardWidget extends State<ShowCardWidget> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -48,8 +42,8 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                   if (loadingProgress == null) {
                     return child;
                   }
-                  return Container(
-                    color: Colors.red,
+                  return const CircularProgressIndicator(
+                    color: Colors.blue,
                   );
                 },
                 errorBuilder: (BuildContext context, Object exception,
