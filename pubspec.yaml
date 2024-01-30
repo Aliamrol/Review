@@ -45,6 +45,7 @@ dependencies:
   get_it: ^7.6.0
   talker: ^3.2.0
   flutter_stepindicator: ^0.1.7
+  quickalert: ^1.0.2
 
 
 dev_dependencies:

@@ -12,10 +12,11 @@ class ShowCardWidget extends StatefulWidget {
 }
 
 class _ShowCardWidget extends State<ShowCardWidget> {
+  
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.network(
@@ -54,6 +55,6 @@ class _ShowCardWidget extends State<ShowCardWidget> {
         Text(widget.cardEntity.description ??
             "description description description")
       ],
-    ));
+    );
   }
 }

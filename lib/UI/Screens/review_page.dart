@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:talker/talker.dart';
-
+import 'package:quickalert/quickalert.dart';
 import '../../Entities/card_entity.dart';
 import '../../ReviewBloc/review_bloc.dart';
 import '../../ReviewBloc/review_state.dart';
@@ -38,9 +37,23 @@ class _ReviewPageState extends State<ReviewPage> {
       ),
       // must implement with page view builder
       body: BlocConsumer<ReviewBloc, FlashCardState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if (state is FlashCardErrorState) {
+            QuickAlert.show(
+                context: context,
+                type: QuickAlertType.error,
+                onConfirmBtnTap: () {
+                  BlocProvider.of<ReviewBloc>(context)
+                      .add(ReviewInitialEvent());
+                  Navigator.of(context).pop();
+                },
+                title: "Oops...",
+                text: "Please check internet connection");
+          }
+        },
         builder: (context, state) {
           if (state is FlashCardCompleteState) {
+            print("Complete");
             List cards = state.lessonEntity.cards;
             return PageView.builder(
                 controller: _myPage,
@@ -51,34 +64,13 @@ class _ReviewPageState extends State<ReviewPage> {
                 });
           }
           if (state is FlashCardLoadingState) {
+            print("Loading");
             return const Center(
                 child: SizedBox(
               width: 50,
               height: 50,
               child: CircularProgressIndicator(),
             ));
-          }
-          if (state is FlashCardErrorState) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Center(
-                  child: Text(
-                    state.msgError.toString(),
-                    style: const TextStyle(color: Colors.red, fontSize: 10),
-                  ),
-                ),
-                const SizedBox(
-                  height: 100,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      BlocProvider.of<ReviewBloc>(context)
-                          .add(ReviewInitialEvent());
-                    },
-                    child: const Text("Try again"))
-              ],
-            );
           }
           return Container();
         },
