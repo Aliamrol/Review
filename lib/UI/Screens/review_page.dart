@@ -31,31 +31,7 @@ class _ReviewPageState extends State<ReviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  tooltip: "Previous Page",
-                  onPressed: () {
-                    BlocProvider.of<ReviewBloc>(context)
-                        .add(ReviewPreviousEvent());
-                  },
-                  icon: const Icon(CupertinoIcons.arrow_left)),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.727777778,
-              ),
-              IconButton(
-                  tooltip: "Next Page",
-                  onPressed: () {
-                    BlocProvider.of<ReviewBloc>(context).add(ReviewNextEvent());
-                  },
-                  icon: const Icon(CupertinoIcons.arrow_right)),
-            ],
-          )
-        ],
-      ),
+
       // must implement with page view builder
       body: BlocConsumer<ReviewBloc, ReviewState>(
         builder: (context, state) {
