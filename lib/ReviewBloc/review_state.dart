@@ -24,3 +24,5 @@ class ReviewErrorState extends ReviewState {
 class ReviewNextState extends ReviewState {}
 
 class ReviewPreviousState extends ReviewState {}
+
+class ReviewAgainState extends ReviewState {}

@@ -1,27 +1,24 @@
-import 'package:dio/dio.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:feather_icons_svg/feather_icons_svg.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'package:uni/Entities/lesson_entity.dart';
+import 'package:uni/UI/Widgets/end_review_page.dart';
 import '../../Entities/card_entity.dart';
 import '../../ReviewBloc/review_bloc.dart';
 import '../../ReviewBloc/review_state.dart';
 import '../Widgets/show_card_widget.dart';
 
 class ReviewPage extends StatefulWidget {
-  const ReviewPage({super.key, required this.title});
-
-  final String title;
+  late LessonEntity lessonEntity;
 
   @override
   State<ReviewPage> createState() => _ReviewPageState();
 }
 
 class _ReviewPageState extends State<ReviewPage> {
-  final PageController _myPage = PageController();
+  final PageController _myPage = PageController(initialPage: 0);
   List cards = [];
 
   @override
@@ -61,17 +58,33 @@ class _ReviewPageState extends State<ReviewPage> {
       ),
       // must implement with page view builder
       body: BlocConsumer<ReviewBloc, ReviewState>(
+        builder: (context, state) {
+          if (state is ReviewCompleteState ||
+              state is ReviewPreviousState ||
+              state is ReviewNextState ||
+              state is ReviewAgainState) {
+            if (state is ReviewCompleteState) {
+              widget.lessonEntity = state.lessonEntity;
+              Navigator.of(context).pop();
+              cards = state.lessonEntity.cards;
+            }
+            return PageView.builder(
+                controller: _myPage,
+                itemCount: cards.length + 1,
+                itemBuilder: (context, int index) {
+                  var valueStepIndicator = index / (cards.length - 1);
+                  if (index == cards.length) {
+                    return EndReviewPage(lessonEntity: widget.lessonEntity);
+                  }
+                  return ShowCardWidget(
+                    cardEntity: CardEntity.fromJson(cards[index]),
+                    value: valueStepIndicator,
+                  );
+                });
+          }
+          return Container();
+        },
         listener: (context, state) {
-          if (state is ReviewNextState) {
-            _myPage.nextPage(
-                duration: const Duration(microseconds: 1),
-                curve: Curves.bounceOut);
-          }
-          if (state is ReviewPreviousState) {
-            _myPage.previousPage(
-                duration: const Duration(microseconds: 1),
-                curve: Curves.elasticInOut);
-          }
           if (state is ReviewErrorState) {
             Navigator.of(context).pop();
             QuickAlert.show(
@@ -91,27 +104,19 @@ class _ReviewPageState extends State<ReviewPage> {
                 type: QuickAlertType.loading,
                 title: "Loading");
           }
-        },
-        builder: (context, state) {
-          if (state is ReviewCompleteState ||
-              state is ReviewPreviousState ||
-              state is ReviewNextState) {
-            if (state is ReviewCompleteState) {
-              Navigator.of(context).pop();
-              cards = state.lessonEntity.cards;
-            }
-            return PageView.builder(
-                controller: _myPage,
-                itemCount: cards.length,
-                itemBuilder: (context, int index) {
-                  var valueStepIndicator = index / (cards.length - 1);
-                  return ShowCardWidget(
-                    cardEntity: CardEntity.fromJson(cards[index]),
-                    value: valueStepIndicator,
-                  );
-                });
+          if (state is ReviewNextState) {
+            _myPage.nextPage(
+                duration: const Duration(microseconds: 1),
+                curve: Curves.bounceOut);
           }
-          return Container();
+          if (state is ReviewPreviousState) {
+            _myPage.previousPage(
+                duration: const Duration(microseconds: 1),
+                curve: Curves.bounceOut);
+          }
+          if (state is ReviewAgainState) {
+            _myPage.jumpToPage(0);
+          }
         },
       ),
     );

@@ -1,0 +1,95 @@
+[33mcommit dc5d65f2491671294ee6a05bbc61b6a49e9608a9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 17:52:46 2024 +0330
+
+    fix: set size
+
+[33mcommit 2c429852eea38f949e8223d19a44bcff010c4d6a[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 17:45:51 2024 +0330
+
+    fix: bug Step indicator
+
+[33mcommit a743887c1b1c0c206b27da00bbf0ab986ff348f8[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 17:44:31 2024 +0330
+
+    feat: add Next button and previous button
+
+[33mcommit 3d90bd705272ab711d3bc3b31680d98765f4e902[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 16:39:06 2024 +0330
+
+    fix: bug Navigator between quick alert error and loading
+
+[33mcommit a31c7d2352bd7ff88c826231a0f5c87ec568ab8f[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 14:45:42 2024 +0330
+
+    feat: add linear indicator
+
+[33mcommit 1afd3705d7556d4a57af2ec2e1db165df76d2c74[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 12:46:48 2024 +0330
+
+    feat: add alertDialog for error image network at showCardWidget
+
+[33mcommit 668ca13dffe41bc06b79404ab455590fb53c6b53[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 11:32:36 2024 +0330
+
+    feat: add QuickAlert for handling error state
+
+[33mcommit e780b03ef4fe1b87336c5c32f9d42d173777c691[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Tue Jan 30 00:26:31 2024 +0330
+
+    fix: bug show loading Image
+
+[33mcommit 2da0c1ee37ebe472e1041cd3c24e6f35254777b7[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 17:55:49 2024 +0330
+
+    bug: fix bug PageView
+
+[33mcommit 8e938bdc05786eb186170f2c869366e727adbe76[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 17:54:18 2024 +0330
+
+    feat: add error state handling and fix bugs
+
+[33mcommit ce06daba2667cf7ea26cf17233379203a59c014b[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 15:12:51 2024 +0330
+
+    fix: pageView bug fix
+
+[33mcommit 139579ec40dc96093d2cae6060a5ec23695b1bcf[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 14:47:44 2024 +0330
+
+    test
+
+[33mcommit 39c1498d313aa488821dd0e312ee75f59c6b96bf[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 14:18:25 2024 +0330
+
+    feat: error state & loading state & pageView & handle bloc
+
+[33mcommit 00f5c6044e03a992acea78b3613bd5ff871332b0[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 12:46:56 2024 +0330
+
+    feat: add Repository
+
+[33mcommit 55e2f81342f7fb815e7d1a80aeebbb88f4bad79d[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 12:17:38 2024 +0330
+
+    feat: add card Entity , lesson Entity & json_Serialization
+
+[33mcommit be64c3e2e96bac9501c2cf7d1266d59e6a6e1662[m
+Author: ali amrol <aliamrol@aut.ac.ir>
+Date:   Mon Jan 29 11:47:43 2024 +0330
+
+    init

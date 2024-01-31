@@ -29,21 +29,9 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
           json = response?.data;
-          if (kDebugMode) {
-            print("Status Code: ${response?.statusCode}");
-          }
-          if (kDebugMode) {
-            print("Status msg : ${response?.statusMessage}");
-          }
           lessonEntity = LessonEntity.fromJson(json!);
           emit(ReviewCompleteState.FlashCardCompleteState(lessonEntity));
         } catch (e) {
-          if (kDebugMode) {
-            print("Status Code: ${response?.statusCode}");
-          }
-          if (kDebugMode) {
-            print("Status msg : ${response?.statusMessage}");
-          }
           if (kDebugMode) {
             print(e);
           }
@@ -55,6 +43,9 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
       }
       if (event is ReviewPreviousEvent) {
         emit(ReviewPreviousState());
+      }
+      if (event is ReviewAgainEvent){
+        emit(ReviewAgainState());
       }
     });
   }

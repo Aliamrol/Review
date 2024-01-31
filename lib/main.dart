@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (context) => ReviewBloc(),
-        child: const ReviewPage(title: 'Flutter Demo Home Page'),
+        child: ReviewPage()
       ),
     );
   }
