@@ -20,34 +20,7 @@ class _ShowCardWidget extends State<ShowCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Visibility(
-                visible: widget.value == 0 ? false : true,
-                child: IconButton(
-                    tooltip: "Previous Page",
-                    onPressed: () {
-                      BlocProvider.of<ReviewBloc>(context)
-                          .add(ReviewPreviousEvent());
-                    },
-                    icon: const Icon(CupertinoIcons.arrow_left)),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.727777778,
-              ),
-              IconButton(
-                  tooltip: "Next Page",
-                  onPressed: () {
-                    BlocProvider.of<ReviewBloc>(context).add(ReviewNextEvent());
-                  },
-                  icon: const Icon(CupertinoIcons.arrow_right)),
-            ],
-          )
-        ],
-      ),
+      appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -100,16 +73,43 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                     fontSize: MediaQuery.of(context).textScaleFactor * 50,
                     fontWeight: FontWeight.w400),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Visibility(
+                    visible: widget.value == 0 ? false : true,
+                    child: IconButton(
+                        tooltip: "Previous Page",
+                        onPressed: () {
+                          BlocProvider.of<ReviewBloc>(context)
+                              .add(ReviewPreviousEvent());
+                        },
+                        icon: const Icon(CupertinoIcons.arrow_left)),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.727777778,
+                  ),
+                  IconButton(
+                      tooltip: "Next Page",
+                      onPressed: () {
+                        BlocProvider.of<ReviewBloc>(context)
+                            .add(ReviewNextEvent());
+                      },
+                      icon: const Icon(CupertinoIcons.arrow_right)),
+                ],
+              ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.008,
               ),
               Text(
                 widget.cardEntity.phonetic ?? "phonetic",
-                style:
-                    const TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontSize: MediaQuery.of(context).textScaleFactor * 14,
+                ),
               ),
-              const SizedBox(
-                height: 100,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.0625,
               ),
               Text(widget.cardEntity.description ??
                   "description description description")

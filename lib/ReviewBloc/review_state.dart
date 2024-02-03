@@ -15,23 +15,8 @@ class ReviewState with _$ReviewState {
 
   const factory ReviewState.Previous() = _ReviewPreviousState;
 
-  const factory ReviewState.Complete({required this.lessonEntity}) =
+  const factory ReviewState.Complete({required LessonEntity lessonEntity}) =
       _ReviewCompleteState;
+
+  const factory ReviewState.Again() = _ReviewAgainState;
 }
-
-//
-// class ReviewCompleteState extends ReviewState {
-//   ReviewCompleteState.FlashCardCompleteState(lessonEntity) {
-//     this.lessonEntity = lessonEntity;
-//   }
-// }
-//
-
-//   ReviewErrorState(this.msgError, this.status);
-// }
-//
-// class ReviewNextState extends ReviewState {}
-//
-// class ReviewPreviousState extends ReviewState {}
-//
-// class ReviewAgainState extends ReviewState {}

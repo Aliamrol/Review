@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uni/locator.dart';
 import 'package:uni/repository/review_repository.dart';
@@ -20,32 +19,34 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   Map<String, dynamic>? json;
   Response? response;
 
-  ReviewBloc() : super(ReviewLoadingState()) {
+  ReviewBloc() : super(const ReviewState.Loading()) {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
-        emit(ReviewLoadingState());
+        emit(const ReviewState.Loading());
+        print("emit Loading");
         try {
           response = await locator
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
           json = response?.data;
           lessonEntity = LessonEntity.fromJson(json!);
-          emit(ReviewCompleteState.FlashCardCompleteState(lessonEntity));
+          emit(ReviewState.Complete(lessonEntity: lessonEntity));
+          print("emit Complete");
         } catch (e) {
           if (kDebugMode) {
             print(e);
           }
-          emit(ReviewErrorState(e.toString(), response?.statusCode));
+          emit(ReviewState.Error(e.toString(), response?.statusCode));
         }
       }
       if (event is ReviewNextEvent) {
-        emit(ReviewNextState());
+        emit(const ReviewState.Next());
       }
       if (event is ReviewPreviousEvent) {
-        emit(ReviewPreviousState());
+        emit(const ReviewState.Previous());
       }
-      if (event is ReviewAgainEvent){
-        emit(ReviewAgainState());
+      if (event is ReviewAgainEvent) {
+        emit(const ReviewState.Again());
       }
     });
   }

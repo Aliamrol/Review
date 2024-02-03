@@ -31,22 +31,77 @@ class _ReviewPageState extends State<ReviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       // must implement with page view builder
       body: BlocConsumer<ReviewBloc, ReviewState>(
-        builder: (context, state) {
-          if (state is ReviewCompleteState ||
-              state is ReviewPreviousState ||
-              state is ReviewNextState ||
-              state is ReviewAgainState) {
-            if (state is ReviewCompleteState) {
-              widget.lessonEntity = state.lessonEntity;
+        listener: (context, state) {
+          print("Listener : ${state.toString()}");
+          state.whenOrNull(
+            // Next: () {
+            //   _myPage.nextPage(
+            //       duration: const Duration(microseconds: 1),
+            //       curve: Curves.bounceOut);
+            // },
+            // Previous: () {
+            //   _myPage.previousPage(
+            //       duration: const Duration(microseconds: 1),
+            //       curve: Curves.bounceOut);
+            // },
+            // Again: () {
+            //   _myPage.initialPage;
+            // },
+            Error: (msg, code) {
               Navigator.of(context).pop();
-              cards = state.lessonEntity.cards;
-            }
-            return PageView.builder(
-                controller: _myPage,
+              QuickAlert.show(
+                  context: context,
+                  type: QuickAlertType.error,
+                  onCancelBtnTap: () {
+                    BlocProvider.of<ReviewBloc>(context)
+                        .add(ReviewInitialEvent());
+                  },
+                  title: "Error $code}",
+                  text: "Please Check Internet Connection");
+            },
+            Loading: () {
+              // Navigator.of(context).pop();
+              QuickAlert.show(
+                context: context,
+                type: QuickAlertType.loading,
+              );
+            },
+          );
+        },
+        builder: (context, state) {
+          print("Builder : ${state.toString()}");
+          return state.maybeWhen(
+            Complete: (lessonEntity) {
+              print("Complete");
+              widget.lessonEntity = lessonEntity;
+              Navigator.of(context).pop();
+              cards = lessonEntity.cards;
+              return PageView.builder(
                 itemCount: cards.length + 1,
+                controller: _myPage,
+                itemBuilder: (context, int index) {
+                  var valueStepIndicator = index / (cards.length - 1);
+                  if (index == cards.length) {
+                    return EndReviewPage(lessonEntity: widget.lessonEntity);
+                  }
+                  print("index $index == ${cards.length}");
+                  return ShowCardWidget(
+                    cardEntity: CardEntity.fromJson(cards[index]),
+                    value: valueStepIndicator,
+                  );
+                },
+              );
+            },
+            Next: () {
+              print("Give Next");
+              _myPage.nextPage(
+                  duration: const Duration(microseconds: 1),
+                  curve: Curves.bounceOut);
+              return PageView.builder(
+                itemCount: cards.length,
+                controller: _myPage,
                 itemBuilder: (context, int index) {
                   var valueStepIndicator = index / (cards.length - 1);
                   if (index == cards.length) {
@@ -56,43 +111,49 @@ class _ReviewPageState extends State<ReviewPage> {
                     cardEntity: CardEntity.fromJson(cards[index]),
                     value: valueStepIndicator,
                   );
-                });
-          }
-          return Container();
-        },
-        listener: (context, state) {
-          if (state is ReviewErrorState) {
-            Navigator.of(context).pop();
-            QuickAlert.show(
-                context: context,
-                type: QuickAlertType.warning,
-                onConfirmBtnTap: () {
-                  Navigator.of(context).pop();
-                  BlocProvider.of<ReviewBloc>(context)
-                      .add(ReviewInitialEvent());
                 },
-                title: "Error ${state.status}",
-                text: "Please check internet connection");
-          }
-          if (state is ReviewLoadingState) {
-            QuickAlert.show(
-                context: context,
-                type: QuickAlertType.loading,
-                title: "Loading");
-          }
-          if (state is ReviewNextState) {
-            _myPage.nextPage(
-                duration: const Duration(microseconds: 1),
-                curve: Curves.bounceOut);
-          }
-          if (state is ReviewPreviousState) {
-            _myPage.previousPage(
-                duration: const Duration(microseconds: 1),
-                curve: Curves.bounceOut);
-          }
-          if (state is ReviewAgainState) {
-            _myPage.jumpToPage(0);
-          }
+              );
+            },
+            Previous: () {
+              _myPage.previousPage(
+                  duration: const Duration(microseconds: 1),
+                  curve: Curves.bounceOut);
+              return PageView.builder(
+                itemCount: cards.length,
+                controller: _myPage,
+                itemBuilder: (context, int index) {
+                  var valueStepIndicator = index / (cards.length - 1);
+                  if (index == cards.length) {
+                    return EndReviewPage(lessonEntity: widget.lessonEntity);
+                  }
+                  return ShowCardWidget(
+                    cardEntity: CardEntity.fromJson(cards[index]),
+                    value: valueStepIndicator,
+                  );
+                },
+              );
+            },
+            Again: () {
+              _myPage.initialPage;
+              return PageView.builder(
+                itemCount: cards.length,
+                controller: _myPage,
+                itemBuilder: (context, int index) {
+                  var valueStepIndicator = index / (cards.length - 1);
+                  if (index == cards.length) {
+                    return EndReviewPage(lessonEntity: widget.lessonEntity);
+                  }
+                  return ShowCardWidget(
+                    cardEntity: CardEntity.fromJson(cards[index]),
+                    value: valueStepIndicator,
+                  );
+                },
+              );
+            },
+            orElse: () {
+              return PageView();
+            },
+          );
         },
       ),
     );

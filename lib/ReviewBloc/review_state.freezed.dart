@@ -22,7 +22,8 @@ mixin _$ReviewState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +32,8 @@ mixin _$ReviewState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +42,8 @@ mixin _$ReviewState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$ReviewState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$ReviewState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$ReviewState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,7 +140,8 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) {
     return Loading();
   }
@@ -146,7 +153,8 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) {
     return Loading?.call();
   }
@@ -158,7 +166,8 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) {
     if (Loading != null) {
@@ -175,6 +184,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) {
     return Loading(this);
   }
@@ -187,6 +197,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) {
     return Loading?.call(this);
   }
@@ -199,6 +210,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) {
     if (Loading != null) {
@@ -289,7 +301,8 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) {
     return Error(msg, statusCode);
   }
@@ -301,7 +314,8 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) {
     return Error?.call(msg, statusCode);
   }
@@ -313,7 +327,8 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) {
     if (Error != null) {
@@ -330,6 +345,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) {
     return Error(this);
   }
@@ -342,6 +358,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) {
     return Error?.call(this);
   }
@@ -354,6 +371,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) {
     if (Error != null) {
@@ -416,7 +434,8 @@ class _$_ReviewNextState implements _ReviewNextState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) {
     return Next();
   }
@@ -428,7 +447,8 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) {
     return Next?.call();
   }
@@ -440,7 +460,8 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) {
     if (Next != null) {
@@ -457,6 +478,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) {
     return Next(this);
   }
@@ -469,6 +491,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) {
     return Next?.call(this);
   }
@@ -481,6 +504,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) {
     if (Next != null) {
@@ -536,7 +560,8 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) {
     return Previous();
   }
@@ -548,7 +573,8 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) {
     return Previous?.call();
   }
@@ -560,7 +586,8 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) {
     if (Previous != null) {
@@ -577,6 +604,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) {
     return Previous(this);
   }
@@ -589,6 +617,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) {
     return Previous?.call(this);
   }
@@ -601,6 +630,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) {
     if (Previous != null) {
@@ -620,7 +650,7 @@ abstract class _$$_ReviewCompleteStateCopyWith<$Res> {
           $Res Function(_$_ReviewCompleteState) then) =
       __$$_ReviewCompleteStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({dynamic lessonEntity});
+  $Res call({LessonEntity lessonEntity});
 }
 
 /// @nodoc
@@ -634,11 +664,13 @@ class __$$_ReviewCompleteStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lessonEntity = freezed,
+    Object? lessonEntity = null,
   }) {
     return _then(_$_ReviewCompleteState(
-      lessonEntity:
-          freezed == lessonEntity ? _value.lessonEntity! : lessonEntity,
+      lessonEntity: null == lessonEntity
+          ? _value.lessonEntity
+          : lessonEntity // ignore: cast_nullable_to_non_nullable
+              as LessonEntity,
     ));
   }
 }
@@ -649,7 +681,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   const _$_ReviewCompleteState({required this.lessonEntity});
 
   @override
-  final dynamic lessonEntity;
+  final LessonEntity lessonEntity;
 
   @override
   String toString() {
@@ -661,13 +693,12 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ReviewCompleteState &&
-            const DeepCollectionEquality()
-                .equals(other.lessonEntity, lessonEntity));
+            (identical(other.lessonEntity, lessonEntity) ||
+                other.lessonEntity == lessonEntity));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(lessonEntity));
+  int get hashCode => Object.hash(runtimeType, lessonEntity);
 
   @JsonKey(ignore: true)
   @override
@@ -683,7 +714,8 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     required TResult Function(String? msg, int? statusCode) Error,
     required TResult Function() Next,
     required TResult Function() Previous,
-    required TResult Function(dynamic lessonEntity) Complete,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
   }) {
     return Complete(lessonEntity);
   }
@@ -695,7 +727,8 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult? Function(String? msg, int? statusCode)? Error,
     TResult? Function()? Next,
     TResult? Function()? Previous,
-    TResult? Function(dynamic lessonEntity)? Complete,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
   }) {
     return Complete?.call(lessonEntity);
   }
@@ -707,7 +740,8 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult Function(String? msg, int? statusCode)? Error,
     TResult Function()? Next,
     TResult Function()? Previous,
-    TResult Function(dynamic lessonEntity)? Complete,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
     required TResult orElse(),
   }) {
     if (Complete != null) {
@@ -724,6 +758,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     required TResult Function(_ReviewNextState value) Next,
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
   }) {
     return Complete(this);
   }
@@ -736,6 +771,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult? Function(_ReviewNextState value)? Next,
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
   }) {
     return Complete?.call(this);
   }
@@ -748,6 +784,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult Function(_ReviewNextState value)? Next,
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
     required TResult orElse(),
   }) {
     if (Complete != null) {
@@ -758,11 +795,137 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
 }
 
 abstract class _ReviewCompleteState implements ReviewState {
-  const factory _ReviewCompleteState({required final dynamic lessonEntity}) =
-      _$_ReviewCompleteState;
+  const factory _ReviewCompleteState(
+      {required final LessonEntity lessonEntity}) = _$_ReviewCompleteState;
 
-  dynamic get lessonEntity;
+  LessonEntity get lessonEntity;
   @JsonKey(ignore: true)
   _$$_ReviewCompleteStateCopyWith<_$_ReviewCompleteState> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ReviewAgainStateCopyWith<$Res> {
+  factory _$$_ReviewAgainStateCopyWith(
+          _$_ReviewAgainState value, $Res Function(_$_ReviewAgainState) then) =
+      __$$_ReviewAgainStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ReviewAgainStateCopyWithImpl<$Res>
+    extends _$ReviewStateCopyWithImpl<$Res, _$_ReviewAgainState>
+    implements _$$_ReviewAgainStateCopyWith<$Res> {
+  __$$_ReviewAgainStateCopyWithImpl(
+      _$_ReviewAgainState _value, $Res Function(_$_ReviewAgainState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ReviewAgainState implements _ReviewAgainState {
+  const _$_ReviewAgainState();
+
+  @override
+  String toString() {
+    return 'ReviewState.Again()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ReviewAgainState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() Loading,
+    required TResult Function(String? msg, int? statusCode) Error,
+    required TResult Function() Next,
+    required TResult Function() Previous,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
+  }) {
+    return Again();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? Loading,
+    TResult? Function(String? msg, int? statusCode)? Error,
+    TResult? Function()? Next,
+    TResult? Function()? Previous,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
+  }) {
+    return Again?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? Loading,
+    TResult Function(String? msg, int? statusCode)? Error,
+    TResult Function()? Next,
+    TResult Function()? Previous,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
+    required TResult orElse(),
+  }) {
+    if (Again != null) {
+      return Again();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ReviewLoadingState value) Loading,
+    required TResult Function(_ReviewErrorState value) Error,
+    required TResult Function(_ReviewNextState value) Next,
+    required TResult Function(_ReviewPreviousState value) Previous,
+    required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
+  }) {
+    return Again(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ReviewLoadingState value)? Loading,
+    TResult? Function(_ReviewErrorState value)? Error,
+    TResult? Function(_ReviewNextState value)? Next,
+    TResult? Function(_ReviewPreviousState value)? Previous,
+    TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
+  }) {
+    return Again?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ReviewLoadingState value)? Loading,
+    TResult Function(_ReviewErrorState value)? Error,
+    TResult Function(_ReviewNextState value)? Next,
+    TResult Function(_ReviewPreviousState value)? Previous,
+    TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
+    required TResult orElse(),
+  }) {
+    if (Again != null) {
+      return Again(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReviewAgainState implements ReviewState {
+  const factory _ReviewAgainState() = _$_ReviewAgainState;
 }
