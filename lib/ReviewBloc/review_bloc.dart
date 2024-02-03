@@ -22,8 +22,13 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   ReviewBloc() : super(const ReviewState.Loading()) {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
-        emit(const ReviewState.Loading());
-        print("emit Loading");
+        emit(ReviewState.Loading());
+        emit(ReviewState.Loading());
+        emit(ReviewState.Loading());
+        emit(ReviewState.Loading());
+        emit(ReviewState.Loading());
+        emit(ReviewState.Loading());
+
         try {
           response = await locator
               .get<ReviewRepository>()
@@ -31,7 +36,6 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
           json = response?.data;
           lessonEntity = LessonEntity.fromJson(json!);
           emit(ReviewState.Complete(lessonEntity: lessonEntity));
-          print("emit Complete");
         } catch (e) {
           if (kDebugMode) {
             print(e);
