@@ -2,8 +2,8 @@ import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:uni/Cubit/review_cubit.dart';
 import '../../Entities/card_entity.dart';
-import '../../ReviewBloc/review_bloc.dart';
 
 class ShowCardWidget extends StatefulWidget {
   final CardEntity cardEntity;
@@ -81,8 +81,7 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                     child: IconButton(
                         tooltip: "Previous Page",
                         onPressed: () {
-                          BlocProvider.of<ReviewBloc>(context)
-                              .add(ReviewPreviousEvent());
+                          BlocProvider.of<ReviewCubit>(context).previous();
                         },
                         icon: const Icon(CupertinoIcons.arrow_left)),
                   ),
@@ -92,8 +91,7 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                   IconButton(
                       tooltip: "Next Page",
                       onPressed: () {
-                        BlocProvider.of<ReviewBloc>(context)
-                            .add(ReviewNextEvent());
+                        BlocProvider.of<ReviewCubit>(context).next();
                       },
                       icon: const Icon(CupertinoIcons.arrow_right)),
                 ],

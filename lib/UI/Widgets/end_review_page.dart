@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:uni/Cubit/review_cubit.dart';
 import 'package:uni/Entities/lesson_entity.dart';
-import 'package:uni/ReviewBloc/review_bloc.dart';
 
 class EndReviewPage extends StatefulWidget {
   LessonEntity lessonEntity;
@@ -57,8 +57,7 @@ class _EndReviewPage extends State<EndReviewPage> {
               children: [
                 ElevatedButton(
                     onPressed: () {
-                      BlocProvider.of<ReviewBloc>(context)
-                          .add(ReviewAgainEvent());
+                      BlocProvider.of<ReviewCubit>(context).again();
                     },
                     child: const Text("Review Again")),
                 ElevatedButton(

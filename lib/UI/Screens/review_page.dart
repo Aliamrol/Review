@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:uni/Cubit/review_cubit.dart';
 import 'package:uni/UI/Widgets/end_review_page.dart';
 import '../../Entities/card_entity.dart';
-import '../../ReviewBloc/review_bloc.dart';
-import '../../ReviewBloc/review_state.dart';
 import '../Widgets/show_card_widget.dart';
 
 class ReviewPage extends StatefulWidget {
@@ -15,14 +14,13 @@ class ReviewPage extends StatefulWidget {
 
 class _ReviewPageState extends State<ReviewPage> {
   final PageController _myPage = PageController(initialPage: 0);
-  late ReviewBloc reviewBloc;
-
+  late ReviewCubit reviewCubit;
 
   @override
   void initState() {
     // request Data and bloc set loading State
-    reviewBloc = BlocProvider.of<ReviewBloc>(context);
-    reviewBloc.add(ReviewInitialEvent());
+    reviewCubit = BlocProvider.of<ReviewCubit>(context);
+    reviewCubit.initial();
     super.initState();
   }
 
@@ -30,20 +28,20 @@ class _ReviewPageState extends State<ReviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // must implement with page view builder
-      body: BlocConsumer<ReviewBloc, ReviewState>(
+      body: BlocConsumer<ReviewCubit, ReviewState>(
         listener: (context, state) {
           state.whenOrNull(
-            Next: () {
+            next: () {
               _myPage.nextPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            Previous: () {
+            previous: () {
               _myPage.previousPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            Again: () {
+            again: () {
               _myPage.animateToPage(0,
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
@@ -52,7 +50,7 @@ class _ReviewPageState extends State<ReviewPage> {
         },
         builder: (context, state) {
           return state.maybeWhen(
-            Error: (msg, code) {
+            error: (msg, code) {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -68,29 +66,30 @@ class _ReviewPageState extends State<ReviewPage> {
                     ),
                     ElevatedButton(
                         onPressed: () {
-                          reviewBloc.add(ReviewInitialEvent());
+                          reviewCubit.initial();
                         },
                         child: const Text("Try Again"))
                   ],
                 ),
               );
             },
-            Loading: () {
+            loading: () {
               return const Center(child: CircularProgressIndicator());
             },
             orElse: () {
               return PageView.builder(
-                itemCount: reviewBloc.getCards().length + 1,
+                itemCount: reviewCubit.getCards().length + 1,
                 controller: _myPage,
                 itemBuilder: (context, int index) {
                   var valueStepIndicator =
-                      index / (reviewBloc.getCards().length - 1);
-                  if (index == reviewBloc.lessonEntity.cards.length) {
-                    return EndReviewPage(lessonEntity: reviewBloc.lessonEntity);
+                      index / (reviewCubit.getCards().length - 1);
+                  if (index == reviewCubit.lessonEntity.cards.length) {
+                    return EndReviewPage(
+                        lessonEntity: reviewCubit.lessonEntity);
                   }
                   return ShowCardWidget(
                     cardEntity: CardEntity.fromJson(
-                        reviewBloc.lessonEntity.cards[index]),
+                        reviewCubit.lessonEntity.cards[index]),
                     value: valueStepIndicator,
                   );
                 },
