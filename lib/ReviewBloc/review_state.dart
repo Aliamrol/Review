@@ -19,5 +19,6 @@ class ReviewState with _$ReviewState {
       _ReviewCompleteState;
 
   const factory ReviewState.again() = _ReviewAgainState;
+
   const factory ReviewState.idle() = _ReviewIdleState;
 }

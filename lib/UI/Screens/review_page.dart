@@ -14,7 +14,7 @@ class ReviewPage extends StatefulWidget {
 }
 
 class _ReviewPageState extends State<ReviewPage> {
-  final PageController _myPage = PageController(initialPage: 0);
+  final PageController _myPage = PageController(initialPage: 11);
   late ReviewBloc reviewBloc;
 
   @override
@@ -52,15 +52,30 @@ class _ReviewPageState extends State<ReviewPage> {
         builder: (context, state) {
           return state.maybeWhen(
             Error: (msg, code) {
-              return const Center(
-                child: Text(
-                  "ERROR",
-                  style: TextStyle(fontSize: 40),
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "OOPS...   ERROR!\n\nPlease Check Internet Connection",
+                      style: TextStyle(
+                          fontSize: MediaQuery.of(context).textScaleFactor * 20,
+                          color: Colors.red),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          reviewBloc.add(ReviewInitialEvent());
+                        },
+                        child: const Text("Try Again"))
+                  ],
                 ),
               );
             },
             Loading: () {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             },
             orElse: () {
               return PageView.builder(

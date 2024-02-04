@@ -31,7 +31,17 @@ class _EndReviewPage extends State<EndReviewPage> {
                 width: MediaQuery.of(context).size.height * 0.2,
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Image.network(
-                    "https://cdn-icons-png.flaticon.com/512/5988/5988477.png"),
+                  "https://cdn-icons-png.flaticon.com/512/5988/5988477.png",
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent? loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    }
+                    return const CircularProgressIndicator(
+                      color: Colors.blue,
+                    );
+                  },
+                ),
               ),
             ),
             Text(
@@ -47,8 +57,10 @@ class _EndReviewPage extends State<EndReviewPage> {
               children: [
                 ElevatedButton(
                     onPressed: () {
-                      BlocProvider.of<ReviewBloc>(context).add(ReviewAgainEvent());
-                    }, child: const Text("Review Again")),
+                      BlocProvider.of<ReviewBloc>(context)
+                          .add(ReviewAgainEvent());
+                    },
+                    child: const Text("Review Again")),
                 ElevatedButton(
                     onPressed: () {}, child: const Text("Flashcard Practice")),
                 ElevatedButton(
