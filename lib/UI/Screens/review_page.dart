@@ -14,7 +14,7 @@ class ReviewPage extends StatefulWidget {
 }
 
 class _ReviewPageState extends State<ReviewPage> {
-  final PageController _myPage = PageController(initialPage: 11);
+  final PageController _myPage = PageController(initialPage: 0);
   late ReviewBloc reviewBloc;
 
   @override
