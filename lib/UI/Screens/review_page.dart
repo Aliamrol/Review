@@ -1,20 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
-import 'package:uni/Entities/lesson_entity.dart';
 import 'package:uni/UI/Widgets/end_review_page.dart';
-import 'package:uni/locator.dart';
 import '../../Entities/card_entity.dart';
 import '../../ReviewBloc/review_bloc.dart';
 import '../../ReviewBloc/review_state.dart';
-import '../../repository/data.dart';
-import '../../repository/review_repository.dart';
 import '../Widgets/show_card_widget.dart';
 
 class ReviewPage extends StatefulWidget {
-  late LessonEntity lessonEntity;
+  const ReviewPage({super.key});
 
   @override
   State<ReviewPage> createState() => _ReviewPageState();
@@ -22,14 +15,13 @@ class ReviewPage extends StatefulWidget {
 
 class _ReviewPageState extends State<ReviewPage> {
   final PageController _myPage = PageController(initialPage: 0);
-  List cards = [];
-  late int i;
+  late ReviewBloc reviewBloc;
 
   @override
   void initState() {
     // request Data and bloc set loading State
-    i = 0;
-    BlocProvider.of<ReviewBloc>(context).add(ReviewInitialEvent());
+    reviewBloc = BlocProvider.of<ReviewBloc>(context);
+    reviewBloc.add(ReviewInitialEvent());
     super.initState();
   }
 
@@ -39,9 +31,6 @@ class _ReviewPageState extends State<ReviewPage> {
       // must implement with page view builder
       body: BlocConsumer<ReviewBloc, ReviewState>(
         listener: (context, state) {
-          i++;
-          print(i);
-          print("state is : ${state.toString()}");
           state.whenOrNull(
             Next: () {
               _myPage.nextPage(
@@ -54,52 +43,38 @@ class _ReviewPageState extends State<ReviewPage> {
                   curve: Curves.bounceOut);
             },
             Again: () {
-              _myPage.initialPage;
+              _myPage.animateToPage(0,
+                  duration: const Duration(microseconds: 1),
+                  curve: Curves.bounceOut);
             },
           );
         },
         builder: (context, state) {
-          print("Builder : ${state.toString()}");
           return state.maybeWhen(
             Error: (msg, code) {
               return const Center(
-                child: Text("ERRRPRRRRRRRRRRRRRR"),
+                child: Text(
+                  "ERROR",
+                  style: TextStyle(fontSize: 40),
+                ),
               );
             },
             Loading: () {
               return const CircularProgressIndicator();
             },
-            Complete: (lessonEntity) {
-              widget.lessonEntity = lessonEntity;
-              // Navigator.of(context).pop();
-              cards = lessonEntity.cards;
-              return PageView.builder(
-                itemCount: cards.length + 1,
-                controller: _myPage,
-                itemBuilder: (context, int index) {
-                  var valueStepIndicator = index / (cards.length - 1);
-                  if (index == cards.length) {
-                    return EndReviewPage(lessonEntity: widget.lessonEntity);
-                  }
-                  return ShowCardWidget(
-                    cardEntity: CardEntity.fromJson(cards[index]),
-                    value: valueStepIndicator,
-                  );
-                },
-              );
-            },
             orElse: () {
-              print("orElse");
               return PageView.builder(
-                itemCount: cards.length + 1,
+                itemCount: reviewBloc.getCards().length + 1,
                 controller: _myPage,
                 itemBuilder: (context, int index) {
-                  var valueStepIndicator = index / (cards.length - 1);
-                  if (index == cards.length) {
-                    return EndReviewPage(lessonEntity: widget.lessonEntity);
+                  var valueStepIndicator =
+                      index / (reviewBloc.getCards().length - 1);
+                  if (index == reviewBloc.lessonEntity.cards.length) {
+                    return EndReviewPage(lessonEntity: reviewBloc.lessonEntity);
                   }
                   return ShowCardWidget(
-                    cardEntity: CardEntity.fromJson(cards[index]),
+                    cardEntity: CardEntity.fromJson(
+                        reviewBloc.lessonEntity.cards[index]),
                     value: valueStepIndicator,
                   );
                 },

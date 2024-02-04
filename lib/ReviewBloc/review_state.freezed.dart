@@ -24,6 +24,7 @@ mixin _$ReviewState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$ReviewState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$ReviewState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$ReviewState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$ReviewState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$ReviewState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +148,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Loading();
   }
@@ -155,6 +162,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Loading?.call();
   }
@@ -168,6 +176,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Loading != null) {
@@ -185,6 +194,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Loading(this);
   }
@@ -198,6 +208,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Loading?.call(this);
   }
@@ -211,6 +222,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Loading != null) {
@@ -303,6 +315,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Error(msg, statusCode);
   }
@@ -316,6 +329,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Error?.call(msg, statusCode);
   }
@@ -329,6 +343,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Error != null) {
@@ -346,6 +361,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Error(this);
   }
@@ -359,6 +375,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Error?.call(this);
   }
@@ -372,6 +389,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Error != null) {
@@ -436,6 +454,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Next();
   }
@@ -449,6 +468,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Next?.call();
   }
@@ -462,6 +482,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Next != null) {
@@ -479,6 +500,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Next(this);
   }
@@ -492,6 +514,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Next?.call(this);
   }
@@ -505,6 +528,7 @@ class _$_ReviewNextState implements _ReviewNextState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Next != null) {
@@ -562,6 +586,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Previous();
   }
@@ -575,6 +600,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Previous?.call();
   }
@@ -588,6 +614,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Previous != null) {
@@ -605,6 +632,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Previous(this);
   }
@@ -618,6 +646,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Previous?.call(this);
   }
@@ -631,6 +660,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Previous != null) {
@@ -716,6 +746,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Complete(lessonEntity);
   }
@@ -729,6 +760,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Complete?.call(lessonEntity);
   }
@@ -742,6 +774,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Complete != null) {
@@ -759,6 +792,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Complete(this);
   }
@@ -772,6 +806,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Complete?.call(this);
   }
@@ -785,6 +820,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Complete != null) {
@@ -848,6 +884,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     required TResult Function() Previous,
     required TResult Function(LessonEntity lessonEntity) Complete,
     required TResult Function() Again,
+    required TResult Function() Idle,
   }) {
     return Again();
   }
@@ -861,6 +898,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     TResult? Function()? Previous,
     TResult? Function(LessonEntity lessonEntity)? Complete,
     TResult? Function()? Again,
+    TResult? Function()? Idle,
   }) {
     return Again?.call();
   }
@@ -874,6 +912,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     TResult Function()? Previous,
     TResult Function(LessonEntity lessonEntity)? Complete,
     TResult Function()? Again,
+    TResult Function()? Idle,
     required TResult orElse(),
   }) {
     if (Again != null) {
@@ -891,6 +930,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     required TResult Function(_ReviewPreviousState value) Previous,
     required TResult Function(_ReviewCompleteState value) Complete,
     required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
   }) {
     return Again(this);
   }
@@ -904,6 +944,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     TResult? Function(_ReviewPreviousState value)? Previous,
     TResult? Function(_ReviewCompleteState value)? Complete,
     TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
   }) {
     return Again?.call(this);
   }
@@ -917,6 +958,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
     TResult Function(_ReviewPreviousState value)? Previous,
     TResult Function(_ReviewCompleteState value)? Complete,
     TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
     required TResult orElse(),
   }) {
     if (Again != null) {
@@ -928,4 +970,136 @@ class _$_ReviewAgainState implements _ReviewAgainState {
 
 abstract class _ReviewAgainState implements ReviewState {
   const factory _ReviewAgainState() = _$_ReviewAgainState;
+}
+
+/// @nodoc
+abstract class _$$_ReviewIdleStateCopyWith<$Res> {
+  factory _$$_ReviewIdleStateCopyWith(
+          _$_ReviewIdleState value, $Res Function(_$_ReviewIdleState) then) =
+      __$$_ReviewIdleStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ReviewIdleStateCopyWithImpl<$Res>
+    extends _$ReviewStateCopyWithImpl<$Res, _$_ReviewIdleState>
+    implements _$$_ReviewIdleStateCopyWith<$Res> {
+  __$$_ReviewIdleStateCopyWithImpl(
+      _$_ReviewIdleState _value, $Res Function(_$_ReviewIdleState) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ReviewIdleState implements _ReviewIdleState {
+  const _$_ReviewIdleState();
+
+  @override
+  String toString() {
+    return 'ReviewState.Idle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ReviewIdleState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() Loading,
+    required TResult Function(String? msg, int? statusCode) Error,
+    required TResult Function() Next,
+    required TResult Function() Previous,
+    required TResult Function(LessonEntity lessonEntity) Complete,
+    required TResult Function() Again,
+    required TResult Function() Idle,
+  }) {
+    return Idle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? Loading,
+    TResult? Function(String? msg, int? statusCode)? Error,
+    TResult? Function()? Next,
+    TResult? Function()? Previous,
+    TResult? Function(LessonEntity lessonEntity)? Complete,
+    TResult? Function()? Again,
+    TResult? Function()? Idle,
+  }) {
+    return Idle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? Loading,
+    TResult Function(String? msg, int? statusCode)? Error,
+    TResult Function()? Next,
+    TResult Function()? Previous,
+    TResult Function(LessonEntity lessonEntity)? Complete,
+    TResult Function()? Again,
+    TResult Function()? Idle,
+    required TResult orElse(),
+  }) {
+    if (Idle != null) {
+      return Idle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ReviewLoadingState value) Loading,
+    required TResult Function(_ReviewErrorState value) Error,
+    required TResult Function(_ReviewNextState value) Next,
+    required TResult Function(_ReviewPreviousState value) Previous,
+    required TResult Function(_ReviewCompleteState value) Complete,
+    required TResult Function(_ReviewAgainState value) Again,
+    required TResult Function(_ReviewIdleState value) Idle,
+  }) {
+    return Idle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ReviewLoadingState value)? Loading,
+    TResult? Function(_ReviewErrorState value)? Error,
+    TResult? Function(_ReviewNextState value)? Next,
+    TResult? Function(_ReviewPreviousState value)? Previous,
+    TResult? Function(_ReviewCompleteState value)? Complete,
+    TResult? Function(_ReviewAgainState value)? Again,
+    TResult? Function(_ReviewIdleState value)? Idle,
+  }) {
+    return Idle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ReviewLoadingState value)? Loading,
+    TResult Function(_ReviewErrorState value)? Error,
+    TResult Function(_ReviewNextState value)? Next,
+    TResult Function(_ReviewPreviousState value)? Previous,
+    TResult Function(_ReviewCompleteState value)? Complete,
+    TResult Function(_ReviewAgainState value)? Again,
+    TResult Function(_ReviewIdleState value)? Idle,
+    required TResult orElse(),
+  }) {
+    if (Idle != null) {
+      return Idle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReviewIdleState implements ReviewState {
+  const factory _ReviewIdleState() = _$_ReviewIdleState;
 }

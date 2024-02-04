@@ -11,46 +11,43 @@ part 'review_event.dart';
 
 class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   late LessonEntity lessonEntity;
-
-  // online
-  // late Map<String, dynamic> json;
-  //offline
-
+  
   Map<String, dynamic>? json;
   Response? response;
 
-  ReviewBloc() : super(const ReviewState.Loading()) {
+  List<Map<String, dynamic>> getCards() {
+    return lessonEntity.cards;
+  }
+
+  ReviewBloc() : super(const ReviewState.loading()) {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
-        emit(ReviewState.Loading());
-        emit(ReviewState.Loading());
-        emit(ReviewState.Loading());
-        emit(ReviewState.Loading());
-        emit(ReviewState.Loading());
-        emit(ReviewState.Loading());
-
+        emit(const ReviewState.loading());
         try {
           response = await locator
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
           json = response?.data;
           lessonEntity = LessonEntity.fromJson(json!);
-          emit(ReviewState.Complete(lessonEntity: lessonEntity));
+          emit(ReviewState.complete(lessonEntity: lessonEntity));
         } catch (e) {
           if (kDebugMode) {
             print(e);
           }
-          emit(ReviewState.Error(e.toString(), response?.statusCode));
+          emit(ReviewState.error(e.toString(), response?.statusCode));
         }
       }
       if (event is ReviewNextEvent) {
-        emit(const ReviewState.Next());
+        emit(const ReviewState.idle());
+        emit(const ReviewState.next());
       }
       if (event is ReviewPreviousEvent) {
-        emit(const ReviewState.Previous());
+        emit(const ReviewState.idle());
+        emit(const ReviewState.previous());
       }
       if (event is ReviewAgainEvent) {
-        emit(const ReviewState.Again());
+        emit(const ReviewState.idle());
+        emit(const ReviewState.again());
       }
     });
   }
