@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:uni/Entities/card_entity.dart';
 import 'package:uni/locator.dart';
 import 'package:uni/repository/review_repository.dart';
 import '../Entities/lesson_entity.dart';
@@ -11,11 +12,8 @@ part 'review_event.dart';
 
 class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   late LessonEntity lessonEntity;
-  
-  Map<String, dynamic>? json;
-  Response? response;
 
-  List<Map<String, dynamic>> getCards() {
+  List<CardEntity> getCards() {
     return lessonEntity.cards;
   }
 
@@ -23,11 +21,13 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
         emit(const ReviewState.loading());
+        Map<String, dynamic>? json;
+        Response? response;
         try {
           response = await locator
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
-          json = response?.data;
+          json = response.data;
           lessonEntity = LessonEntity.fromJson(json!);
           emit(ReviewState.complete(lessonEntity: lessonEntity));
         } catch (e) {

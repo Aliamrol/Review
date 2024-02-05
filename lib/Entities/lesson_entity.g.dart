@@ -11,7 +11,7 @@ LessonEntity _$LessonEntityFromJson(Map<String, dynamic> json) => LessonEntity(
       title: json['title'] as String,
       originalTitle: json['originalTitle'] as String,
       position: json['position'] as int,
-      cards: (json['cards'] as List<dynamic>)
+      cardsJson: (json['cards'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
       description: json['description'] as String,
@@ -32,7 +32,7 @@ Map<String, dynamic> _$LessonEntityToJson(LessonEntity instance) =>
       'title': instance.title,
       'originalTitle': instance.originalTitle,
       'position': instance.position,
-      'cards': instance.cards,
+      'cards': instance.cardsJson,
       'description': instance.description,
       'urlId': instance.urlId,
       'webTitle': instance.webTitle,

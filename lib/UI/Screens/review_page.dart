@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uni/UI/Widgets/end_review_page.dart';
-import '../../Entities/card_entity.dart';
 import '../../ReviewBloc/review_bloc.dart';
 import '../../ReviewBloc/review_state.dart';
 import '../Widgets/show_card_widget.dart';
@@ -66,9 +65,7 @@ class _ReviewPageState extends State<ReviewPage> {
                       height: MediaQuery.of(context).size.height * 0.05,
                     ),
                     ElevatedButton(
-                        onPressed: () {
-                          reviewBloc.add(ReviewInitialEvent());
-                        },
+                        onPressed: () => reviewBloc.add(ReviewInitialEvent()),
                         child: const Text("Try Again"))
                   ],
                 ),
@@ -84,12 +81,11 @@ class _ReviewPageState extends State<ReviewPage> {
                 itemBuilder: (context, int index) {
                   var valueStepIndicator =
                       index / (reviewBloc.getCards().length - 1);
-                  if (index == reviewBloc.lessonEntity.cards.length) {
+                  if (index == reviewBloc.getCards().length) {
                     return EndReviewPage(lessonEntity: reviewBloc.lessonEntity);
                   }
                   return ShowCardWidget(
-                    cardEntity: CardEntity.fromJson(
-                        reviewBloc.lessonEntity.cards[index]),
+                    cardEntity: reviewBloc.getCards()[index],
                     value: valueStepIndicator,
                   );
                 },
