@@ -31,21 +31,15 @@ class _ReviewPageState extends State<ReviewPage> {
       body: BlocConsumer<ReviewBloc, ReviewStates>(
         listener: (context, state) {
           state.whenOrNull(
-            moveToNextCard: () {
-              _myPage.nextPage(
-                  duration: const Duration(microseconds: 1),
-                  curve: Curves.bounceOut);
-            },
-            moveToPreviousCard: () {
-              _myPage.previousPage(
-                  duration: const Duration(microseconds: 1),
-                  curve: Curves.bounceOut);
-            },
-            restartReview: () {
-              _myPage.animateToPage(0,
-                  duration: const Duration(microseconds: 1),
-                  curve: Curves.bounceOut);
-            },
+            moveToNextCard: () => _myPage.nextPage(
+                duration: const Duration(microseconds: 1),
+                curve: Curves.bounceOut),
+            moveToPreviousCard: () => _myPage.previousPage(
+                duration: const Duration(microseconds: 1),
+                curve: Curves.bounceOut),
+            restartReview: () => _myPage.animateToPage(0,
+                duration: const Duration(microseconds: 1),
+                curve: Curves.bounceOut),
           );
         },
         builder: (context, state) {
@@ -71,9 +65,7 @@ class _ReviewPageState extends State<ReviewPage> {
                 ),
               );
             },
-            loading: () {
-              return const Center(child: CircularProgressIndicator());
-            },
+            loading: () => const Center(child: CircularProgressIndicator()),
             orElse: () {
               return PageView.builder(
                 itemCount: reviewBloc.lessonEntity.wordsCount + 1,
