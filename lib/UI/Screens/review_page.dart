@@ -31,17 +31,17 @@ class _ReviewPageState extends State<ReviewPage> {
       body: BlocConsumer<ReviewBloc, ReviewStates>(
         listener: (context, state) {
           state.whenOrNull(
-            next: () {
+            moveToNextCard: () {
               _myPage.nextPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            previous: () {
+            moveToPreviousCard: () {
               _myPage.previousPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            again: () {
+            restartReview: () {
               _myPage.animateToPage(0,
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);

@@ -5,7 +5,7 @@ import '../Entities/lesson_entity.dart';
 part 'review_state.freezed.dart';
 
 @freezed
-class ReviewStates with _$ReviewState {
+class ReviewStates with _$ReviewStates {
   const factory ReviewStates.loading() = _ReviewLoadingState;
 
   const factory ReviewStates.error(String? msg, int? statusCode) =
