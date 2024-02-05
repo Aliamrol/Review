@@ -18,69 +18,69 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ReviewState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
 
   @override
   String toString() {
-    return 'ReviewState.Loading()';
+    return 'ReviewState.loading()';
   }
 
   @override
@@ -142,45 +142,45 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Loading();
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Loading?.call();
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Loading != null) {
-      return Loading();
+    if (loading != null) {
+      return loading();
     }
     return orElse();
   }
@@ -188,45 +188,45 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Loading(this);
+    return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Loading?.call(this);
+    return loading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Loading != null) {
-      return Loading(this);
+    if (loading != null) {
+      return loading(this);
     }
     return orElse();
   }
@@ -284,7 +284,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
 
   @override
   String toString() {
-    return 'ReviewState.Error(msg: $msg, statusCode: $statusCode)';
+    return 'ReviewState.error(msg: $msg, statusCode: $statusCode)';
   }
 
   @override
@@ -309,45 +309,45 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Error(msg, statusCode);
+    return error(msg, statusCode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Error?.call(msg, statusCode);
+    return error?.call(msg, statusCode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Error != null) {
-      return Error(msg, statusCode);
+    if (error != null) {
+      return error(msg, statusCode);
     }
     return orElse();
   }
@@ -355,45 +355,45 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Error(this);
+    return error(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Error?.call(this);
+    return error?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Error != null) {
-      return Error(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
@@ -433,7 +433,7 @@ class _$_ReviewNextState implements _ReviewNextState {
 
   @override
   String toString() {
-    return 'ReviewState.Next()';
+    return 'ReviewState.next()';
   }
 
   @override
@@ -448,45 +448,45 @@ class _$_ReviewNextState implements _ReviewNextState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Next();
+    return next();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Next?.call();
+    return next?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Next != null) {
-      return Next();
+    if (next != null) {
+      return next();
     }
     return orElse();
   }
@@ -494,45 +494,45 @@ class _$_ReviewNextState implements _ReviewNextState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Next(this);
+    return next(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Next?.call(this);
+    return next?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Next != null) {
-      return Next(this);
+    if (next != null) {
+      return next(this);
     }
     return orElse();
   }
@@ -565,7 +565,7 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
 
   @override
   String toString() {
-    return 'ReviewState.Previous()';
+    return 'ReviewState.previous()';
   }
 
   @override
@@ -580,45 +580,45 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Previous();
+    return previous();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Previous?.call();
+    return previous?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Previous != null) {
-      return Previous();
+    if (previous != null) {
+      return previous();
     }
     return orElse();
   }
@@ -626,45 +626,45 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Previous(this);
+    return previous(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Previous?.call(this);
+    return previous?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Previous != null) {
-      return Previous(this);
+    if (previous != null) {
+      return previous(this);
     }
     return orElse();
   }
@@ -715,7 +715,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
 
   @override
   String toString() {
-    return 'ReviewState.Complete(lessonEntity: $lessonEntity)';
+    return 'ReviewState.complete(lessonEntity: $lessonEntity)';
   }
 
   @override
@@ -740,45 +740,45 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Complete(lessonEntity);
+    return complete(lessonEntity);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Complete?.call(lessonEntity);
+    return complete?.call(lessonEntity);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Complete != null) {
-      return Complete(lessonEntity);
+    if (complete != null) {
+      return complete(lessonEntity);
     }
     return orElse();
   }
@@ -786,45 +786,45 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Complete(this);
+    return complete(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Complete?.call(this);
+    return complete?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Complete != null) {
-      return Complete(this);
+    if (complete != null) {
+      return complete(this);
     }
     return orElse();
   }
@@ -863,7 +863,7 @@ class _$_ReviewAgainState implements _ReviewAgainState {
 
   @override
   String toString() {
-    return 'ReviewState.Again()';
+    return 'ReviewState.again()';
   }
 
   @override
@@ -878,45 +878,45 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Again();
+    return again();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Again?.call();
+    return again?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Again != null) {
-      return Again();
+    if (again != null) {
+      return again();
     }
     return orElse();
   }
@@ -924,45 +924,45 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Again(this);
+    return again(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Again?.call(this);
+    return again?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Again != null) {
-      return Again(this);
+    if (again != null) {
+      return again(this);
     }
     return orElse();
   }
@@ -995,7 +995,7 @@ class _$_ReviewIdleState implements _ReviewIdleState {
 
   @override
   String toString() {
-    return 'ReviewState.Idle()';
+    return 'ReviewState.idle()';
   }
 
   @override
@@ -1010,45 +1010,45 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() Loading,
-    required TResult Function(String? msg, int? statusCode) Error,
-    required TResult Function() Next,
-    required TResult Function() Previous,
-    required TResult Function(LessonEntity lessonEntity) Complete,
-    required TResult Function() Again,
-    required TResult Function() Idle,
+    required TResult Function() loading,
+    required TResult Function(String? msg, int? statusCode) error,
+    required TResult Function() next,
+    required TResult Function() previous,
+    required TResult Function(LessonEntity lessonEntity) complete,
+    required TResult Function() again,
+    required TResult Function() idle,
   }) {
-    return Idle();
+    return idle();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? Loading,
-    TResult? Function(String? msg, int? statusCode)? Error,
-    TResult? Function()? Next,
-    TResult? Function()? Previous,
-    TResult? Function(LessonEntity lessonEntity)? Complete,
-    TResult? Function()? Again,
-    TResult? Function()? Idle,
+    TResult? Function()? loading,
+    TResult? Function(String? msg, int? statusCode)? error,
+    TResult? Function()? next,
+    TResult? Function()? previous,
+    TResult? Function(LessonEntity lessonEntity)? complete,
+    TResult? Function()? again,
+    TResult? Function()? idle,
   }) {
-    return Idle?.call();
+    return idle?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? Loading,
-    TResult Function(String? msg, int? statusCode)? Error,
-    TResult Function()? Next,
-    TResult Function()? Previous,
-    TResult Function(LessonEntity lessonEntity)? Complete,
-    TResult Function()? Again,
-    TResult Function()? Idle,
+    TResult Function()? loading,
+    TResult Function(String? msg, int? statusCode)? error,
+    TResult Function()? next,
+    TResult Function()? previous,
+    TResult Function(LessonEntity lessonEntity)? complete,
+    TResult Function()? again,
+    TResult Function()? idle,
     required TResult orElse(),
   }) {
-    if (Idle != null) {
-      return Idle();
+    if (idle != null) {
+      return idle();
     }
     return orElse();
   }
@@ -1056,45 +1056,45 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ReviewLoadingState value) Loading,
-    required TResult Function(_ReviewErrorState value) Error,
-    required TResult Function(_ReviewNextState value) Next,
-    required TResult Function(_ReviewPreviousState value) Previous,
-    required TResult Function(_ReviewCompleteState value) Complete,
-    required TResult Function(_ReviewAgainState value) Again,
-    required TResult Function(_ReviewIdleState value) Idle,
+    required TResult Function(_ReviewLoadingState value) loading,
+    required TResult Function(_ReviewErrorState value) error,
+    required TResult Function(_ReviewNextState value) next,
+    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewCompleteState value) complete,
+    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewIdleState value) idle,
   }) {
-    return Idle(this);
+    return idle(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReviewLoadingState value)? Loading,
-    TResult? Function(_ReviewErrorState value)? Error,
-    TResult? Function(_ReviewNextState value)? Next,
-    TResult? Function(_ReviewPreviousState value)? Previous,
-    TResult? Function(_ReviewCompleteState value)? Complete,
-    TResult? Function(_ReviewAgainState value)? Again,
-    TResult? Function(_ReviewIdleState value)? Idle,
+    TResult? Function(_ReviewLoadingState value)? loading,
+    TResult? Function(_ReviewErrorState value)? error,
+    TResult? Function(_ReviewNextState value)? next,
+    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewCompleteState value)? complete,
+    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewIdleState value)? idle,
   }) {
-    return Idle?.call(this);
+    return idle?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReviewLoadingState value)? Loading,
-    TResult Function(_ReviewErrorState value)? Error,
-    TResult Function(_ReviewNextState value)? Next,
-    TResult Function(_ReviewPreviousState value)? Previous,
-    TResult Function(_ReviewCompleteState value)? Complete,
-    TResult Function(_ReviewAgainState value)? Again,
-    TResult Function(_ReviewIdleState value)? Idle,
+    TResult Function(_ReviewLoadingState value)? loading,
+    TResult Function(_ReviewErrorState value)? error,
+    TResult Function(_ReviewNextState value)? next,
+    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewCompleteState value)? complete,
+    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
-    if (Idle != null) {
-      return Idle(this);
+    if (idle != null) {
+      return idle(this);
     }
     return orElse();
   }

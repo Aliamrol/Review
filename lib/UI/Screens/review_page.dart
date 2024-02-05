@@ -31,17 +31,17 @@ class _ReviewPageState extends State<ReviewPage> {
       body: BlocConsumer<ReviewBloc, ReviewState>(
         listener: (context, state) {
           state.whenOrNull(
-            Next: () {
+            next: () {
               _myPage.nextPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            Previous: () {
+            previous: () {
               _myPage.previousPage(
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
             },
-            Again: () {
+            again: () {
               _myPage.animateToPage(0,
                   duration: const Duration(microseconds: 1),
                   curve: Curves.bounceOut);
@@ -50,7 +50,7 @@ class _ReviewPageState extends State<ReviewPage> {
         },
         builder: (context, state) {
           return state.maybeWhen(
-            Error: (msg, code) {
+            error: (msg, code) {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +71,7 @@ class _ReviewPageState extends State<ReviewPage> {
                 ),
               );
             },
-            Loading: () {
+            loading: () {
               return const Center(child: CircularProgressIndicator());
             },
             orElse: () {
