@@ -1,5 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'card_entity.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'lesson_entity.g.dart';
 
@@ -9,7 +9,7 @@ class LessonEntity {
   String title;
   String originalTitle;
   int position;
-  List<Map<String, dynamic>> cardsJson;
+  List<CardEntity> cards;
   String description;
   String urlId;
   String webTitle;
@@ -17,34 +17,29 @@ class LessonEntity {
   int wordsCount;
   int estimatedLearningTime;
   int categoryId;
-  dynamic photo;
-  dynamic photoThumbnail;
+  var photo;
+  var photoThumbnail;
   Map<String, dynamic> hashedFields;
-  List<CardEntity> cards = [];
 
   LessonEntity(
-      {required this.id,
-      required this.title,
-      required this.originalTitle,
-      required this.position,
-      required this.cardsJson,
-      required this.description,
-      required this.urlId,
-      required this.webTitle,
-      required this.localizedProperties,
-      required this.wordsCount,
-      required this.estimatedLearningTime,
-      required this.categoryId,
-      required this.photo,
-      required this.photoThumbnail,
-      required this.hashedFields}) {
-    for (int i = 0; i < cardsJson.length; i++) {
-      cards.add(CardEntity.fromJson(cardsJson[i]));
-    }
-  }
+      this.id,
+      this.title,
+      this.originalTitle,
+      this.position,
+      this.cards,
+      this.description,
+      this.urlId,
+      this.webTitle,
+      this.localizedProperties,
+      this.wordsCount,
+      this.estimatedLearningTime,
+      this.categoryId,
+      this.photo,
+      this.photoThumbnail,
+      this.hashedFields);
 
   factory LessonEntity.fromJson(Map<String, dynamic> json) =>
       _$LessonEntityFromJson(json);
 
-  Map<String, dynamic> toJson(instance) => _$LessonEntityToJson(this);
+  Map<String, dynamic> toJson() => _$LessonEntityToJson(this);
 }

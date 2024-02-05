@@ -1,10 +1,10 @@
 import 'package:uni/Entities/word_photo.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'main_translation_entity.g.dart';
+part 'main_translation.g.dart';
 
 @JsonSerializable()
-class MainTranslationEntity {
+class MainTranslation {
   int id;
   Map<String, dynamic> partOfSpeech;
   WordPhoto wordPhoto;
@@ -30,7 +30,7 @@ class MainTranslationEntity {
   Map<String, dynamic> hashedFields;
   String titleVoice;
 
-  MainTranslationEntity(
+  MainTranslation(
       this.id,
       this.partOfSpeech,
       this.wordPhoto,
@@ -56,8 +56,8 @@ class MainTranslationEntity {
       this.hashedFields,
       this.titleVoice);
 
-  factory MainTranslationEntity.fromJson(Map<String, dynamic> json) =>
-      _$MainTranslationEntityFromJson(json);
+  factory MainTranslation.fromJson(Map<String, dynamic> json) =>
+      _$MainTranslationFromJson(json);
 
-  Map<String, dynamic> toJson(instance) => _$MainTranslationEntityToJson(this);
+  Map<String, dynamic> toJson() => _$MainTranslationToJson(this);
 }

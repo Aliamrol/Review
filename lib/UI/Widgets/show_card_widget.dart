@@ -41,7 +41,7 @@ class _ShowCardWidget extends State<ShowCardWidget> {
             children: [
               Center(
                 child: Image.network(
-                  widget.cardEntity.mainTranslation!["wordPhoto"]["photo"],
+                  widget.cardEntity.mainTranslation.wordPhoto.photo,
                   loadingBuilder: (BuildContext context, Widget child,
                       ImageChunkEvent? loadingProgress) {
                     if (loadingProgress == null) {

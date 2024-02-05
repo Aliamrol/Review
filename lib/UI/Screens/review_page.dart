@@ -76,12 +76,12 @@ class _ReviewPageState extends State<ReviewPage> {
             },
             orElse: () {
               return PageView.builder(
-                itemCount: reviewBloc.getCards().length + 1,
+                itemCount: reviewBloc.lessonEntity.wordsCount + 1,
                 controller: _myPage,
                 itemBuilder: (context, int index) {
                   var valueStepIndicator =
-                      index / (reviewBloc.getCards().length - 1);
-                  if (index == reviewBloc.getCards().length) {
+                      index / (reviewBloc.lessonEntity.wordsCount - 1);
+                  if (index == reviewBloc.lessonEntity.wordsCount) {
                     return EndReviewPage(lessonEntity: reviewBloc.lessonEntity);
                   }
                   return ShowCardWidget(

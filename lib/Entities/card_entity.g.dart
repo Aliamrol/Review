@@ -7,14 +7,14 @@ part of 'card_entity.dart';
 // **************************************************************************
 
 CardEntity _$CardEntityFromJson(Map<String, dynamic> json) => CardEntity(
-      id: json['id'] as int,
-      mainTranslation: json['mainTranslation'] as Map<String, dynamic>?,
-      type: json['type'] as String?,
-      description: json['description'] as String?,
-      position: json['position'] as int?,
-      updatedAt: json['updatedAt'] as String?,
-      title: json['title'] as String?,
-      phonetic: json['phonetic'] as String?,
+      json['id'] as int,
+      MainTranslation.fromJson(json['mainTranslation'] as Map<String, dynamic>),
+      json['type'] as String,
+      json['description'] as String,
+      json['position'] as int,
+      json['updatedAt'] as String,
+      json['title'] as String,
+      json['phonetic'] as String,
     );
 
 Map<String, dynamic> _$CardEntityToJson(CardEntity instance) =>

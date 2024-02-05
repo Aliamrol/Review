@@ -7,23 +7,23 @@ part of 'lesson_entity.dart';
 // **************************************************************************
 
 LessonEntity _$LessonEntityFromJson(Map<String, dynamic> json) => LessonEntity(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      originalTitle: json['originalTitle'] as String,
-      position: json['position'] as int,
-      cardsJson: (json['cards'] as List<dynamic>)
-          .map((e) => e as Map<String, dynamic>)
+      json['id'] as int,
+      json['title'] as String,
+      json['originalTitle'] as String,
+      json['position'] as int,
+      (json['cards'] as List<dynamic>)
+          .map((e) => CardEntity.fromJson(e as Map<String, dynamic>))
           .toList(),
-      description: json['description'] as String,
-      urlId: json['urlId'] as String,
-      webTitle: json['webTitle'] as String,
-      localizedProperties: json['localizedProperties'] as Map<String, dynamic>,
-      wordsCount: json['wordsCount'] as int,
-      estimatedLearningTime: json['estimatedLearningTime'] as int,
-      categoryId: json['categoryId'] as int,
-      photo: json['photo'],
-      photoThumbnail: json['photoThumbnail'],
-      hashedFields: json['hashedFields'] as Map<String, dynamic>,
+      json['description'] as String,
+      json['urlId'] as String,
+      json['webTitle'] as String,
+      json['localizedProperties'] as Map<String, dynamic>,
+      json['wordsCount'] as int,
+      json['estimatedLearningTime'] as int,
+      json['categoryId'] as int,
+      json['photo'],
+      json['photoThumbnail'],
+      json['hashedFields'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$LessonEntityToJson(LessonEntity instance) =>
@@ -32,7 +32,7 @@ Map<String, dynamic> _$LessonEntityToJson(LessonEntity instance) =>
       'title': instance.title,
       'originalTitle': instance.originalTitle,
       'position': instance.position,
-      'cards': instance.cardsJson,
+      'cards': instance.cards,
       'description': instance.description,
       'urlId': instance.urlId,
       'webTitle': instance.webTitle,

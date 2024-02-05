@@ -21,14 +21,12 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
     on<ReviewEvent>((event, emit) async {
       if (event is ReviewInitialEvent) {
         emit(const ReviewState.loading());
-        Map<String, dynamic>? json;
         Response? response;
         try {
           response = await locator
               .get<ReviewRepository>()
               .getLessonData(Data.lessonApiUrl);
-          json = response.data;
-          lessonEntity = LessonEntity.fromJson(json!);
+          lessonEntity = LessonEntity.fromJson(response.data);
           emit(ReviewState.complete(lessonEntity: lessonEntity));
         } catch (e) {
           if (kDebugMode) {

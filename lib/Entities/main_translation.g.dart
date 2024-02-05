@@ -1,17 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'main_translation_entity.dart';
+part of 'main_translation.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MainTranslationEntity _$MainTranslationEntityFromJson(
-        Map<String, dynamic> json) =>
-    MainTranslationEntity(
+MainTranslation _$MainTranslationFromJson(Map<String, dynamic> json) =>
+    MainTranslation(
       json['id'] as int,
       json['partOfSpeech'] as Map<String, dynamic>,
-      WordPhoto.fromJson(json['wordPhoto']),
+      WordPhoto.fromJson(json['wordPhoto'] as Map<String, dynamic>),
       json['position'] as int,
       json['translation'] as String,
       json['alternativeTranslation'],
@@ -37,8 +36,7 @@ MainTranslationEntity _$MainTranslationEntityFromJson(
       json['titleVoice'] as String,
     );
 
-Map<String, dynamic> _$MainTranslationEntityToJson(
-        MainTranslationEntity instance) =>
+Map<String, dynamic> _$MainTranslationToJson(MainTranslation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'partOfSpeech': instance.partOfSpeech,
