@@ -3,10 +3,10 @@ part of 'review_bloc.dart';
 @immutable
 abstract class ReviewEvent {}
 
-class ReviewInitialEvent extends ReviewEvent {}
+class ReviewLoadCardsEvent extends ReviewEvent {}
 
-class ReviewNextEvent extends ReviewEvent {}
+class ReviewMoveToNextCardEvent extends ReviewEvent {}
 
-class ReviewPreviousEvent extends ReviewEvent {}
+class ReviewMoveToPreviousCardEvent extends ReviewEvent {}
 
-class ReviewAgainEvent extends ReviewEvent {}
+class ReviewRestartCardsEvent extends ReviewEvent {}

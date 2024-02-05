@@ -54,10 +54,10 @@ mixin _$ReviewState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,10 +65,10 @@ mixin _$ReviewState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) =>
       throw _privateConstructorUsedError;
@@ -76,10 +76,10 @@ mixin _$ReviewState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) =>
@@ -89,12 +89,12 @@ mixin _$ReviewState {
 /// @nodoc
 abstract class $ReviewStateCopyWith<$Res> {
   factory $ReviewStateCopyWith(
-          ReviewState value, $Res Function(ReviewState) then) =
-      _$ReviewStateCopyWithImpl<$Res, ReviewState>;
+          ReviewStates value, $Res Function(ReviewStates) then) =
+      _$ReviewStateCopyWithImpl<$Res, ReviewStates>;
 }
 
 /// @nodoc
-class _$ReviewStateCopyWithImpl<$Res, $Val extends ReviewState>
+class _$ReviewStateCopyWithImpl<$Res, $Val extends ReviewStates>
     implements $ReviewStateCopyWith<$Res> {
   _$ReviewStateCopyWithImpl(this._value, this._then);
 
@@ -190,10 +190,10 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return loading(this);
@@ -204,10 +204,10 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return loading?.call(this);
@@ -218,10 +218,10 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -232,7 +232,7 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   }
 }
 
-abstract class _ReviewLoadingState implements ReviewState {
+abstract class _ReviewLoadingState implements ReviewStates {
   const factory _ReviewLoadingState() = _$_ReviewLoadingState;
 }
 
@@ -357,10 +357,10 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return error(this);
@@ -371,10 +371,10 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return error?.call(this);
@@ -385,10 +385,10 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -399,7 +399,7 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   }
 }
 
-abstract class _ReviewErrorState implements ReviewState {
+abstract class _ReviewErrorState implements ReviewStates {
   const factory _ReviewErrorState(final String? msg, final int? statusCode) =
       _$_ReviewErrorState;
 
@@ -428,7 +428,7 @@ class __$$_ReviewNextStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewNextState implements _ReviewNextState {
+class _$_ReviewNextState implements _ReviewMoveToNextCardState {
   const _$_ReviewNextState();
 
   @override
@@ -496,10 +496,10 @@ class _$_ReviewNextState implements _ReviewNextState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return next(this);
@@ -510,10 +510,10 @@ class _$_ReviewNextState implements _ReviewNextState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return next?.call(this);
@@ -524,10 +524,10 @@ class _$_ReviewNextState implements _ReviewNextState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -538,8 +538,8 @@ class _$_ReviewNextState implements _ReviewNextState {
   }
 }
 
-abstract class _ReviewNextState implements ReviewState {
-  const factory _ReviewNextState() = _$_ReviewNextState;
+abstract class _ReviewMoveToNextCardState implements ReviewStates {
+  const factory _ReviewMoveToNextCardState() = _$_ReviewNextState;
 }
 
 /// @nodoc
@@ -560,7 +560,7 @@ class __$$_ReviewPreviousStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewPreviousState implements _ReviewPreviousState {
+class _$_ReviewPreviousState implements _ReviewMoveToPreviousCardState {
   const _$_ReviewPreviousState();
 
   @override
@@ -628,10 +628,10 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return previous(this);
@@ -642,10 +642,10 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return previous?.call(this);
@@ -656,10 +656,10 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -670,8 +670,8 @@ class _$_ReviewPreviousState implements _ReviewPreviousState {
   }
 }
 
-abstract class _ReviewPreviousState implements ReviewState {
-  const factory _ReviewPreviousState() = _$_ReviewPreviousState;
+abstract class _ReviewMoveToPreviousCardState implements ReviewStates {
+  const factory _ReviewMoveToPreviousCardState() = _$_ReviewPreviousState;
 }
 
 /// @nodoc
@@ -788,10 +788,10 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return complete(this);
@@ -802,10 +802,10 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return complete?.call(this);
@@ -816,10 +816,10 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -830,7 +830,7 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   }
 }
 
-abstract class _ReviewCompleteState implements ReviewState {
+abstract class _ReviewCompleteState implements ReviewStates {
   const factory _ReviewCompleteState(
       {required final LessonEntity lessonEntity}) = _$_ReviewCompleteState;
 
@@ -858,7 +858,7 @@ class __$$_ReviewAgainStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewAgainState implements _ReviewAgainState {
+class _$_ReviewAgainState implements _ReviewRestartState {
   const _$_ReviewAgainState();
 
   @override
@@ -926,10 +926,10 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return again(this);
@@ -940,10 +940,10 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return again?.call(this);
@@ -954,10 +954,10 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -968,8 +968,8 @@ class _$_ReviewAgainState implements _ReviewAgainState {
   }
 }
 
-abstract class _ReviewAgainState implements ReviewState {
-  const factory _ReviewAgainState() = _$_ReviewAgainState;
+abstract class _ReviewRestartState implements ReviewStates {
+  const factory _ReviewRestartState() = _$_ReviewAgainState;
 }
 
 /// @nodoc
@@ -1058,10 +1058,10 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   TResult map<TResult extends Object?>({
     required TResult Function(_ReviewLoadingState value) loading,
     required TResult Function(_ReviewErrorState value) error,
-    required TResult Function(_ReviewNextState value) next,
-    required TResult Function(_ReviewPreviousState value) previous,
+    required TResult Function(_ReviewMoveToNextCardState value) next,
+    required TResult Function(_ReviewMoveToPreviousCardState value) previous,
     required TResult Function(_ReviewCompleteState value) complete,
-    required TResult Function(_ReviewAgainState value) again,
+    required TResult Function(_ReviewRestartState value) again,
     required TResult Function(_ReviewIdleState value) idle,
   }) {
     return idle(this);
@@ -1072,10 +1072,10 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ReviewLoadingState value)? loading,
     TResult? Function(_ReviewErrorState value)? error,
-    TResult? Function(_ReviewNextState value)? next,
-    TResult? Function(_ReviewPreviousState value)? previous,
+    TResult? Function(_ReviewMoveToNextCardState value)? next,
+    TResult? Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult? Function(_ReviewCompleteState value)? complete,
-    TResult? Function(_ReviewAgainState value)? again,
+    TResult? Function(_ReviewRestartState value)? again,
     TResult? Function(_ReviewIdleState value)? idle,
   }) {
     return idle?.call(this);
@@ -1086,10 +1086,10 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ReviewLoadingState value)? loading,
     TResult Function(_ReviewErrorState value)? error,
-    TResult Function(_ReviewNextState value)? next,
-    TResult Function(_ReviewPreviousState value)? previous,
+    TResult Function(_ReviewMoveToNextCardState value)? next,
+    TResult Function(_ReviewMoveToPreviousCardState value)? previous,
     TResult Function(_ReviewCompleteState value)? complete,
-    TResult Function(_ReviewAgainState value)? again,
+    TResult Function(_ReviewRestartState value)? again,
     TResult Function(_ReviewIdleState value)? idle,
     required TResult orElse(),
   }) {
@@ -1100,6 +1100,6 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   }
 }
 
-abstract class _ReviewIdleState implements ReviewState {
+abstract class _ReviewIdleState implements ReviewStates {
   const factory _ReviewIdleState() = _$_ReviewIdleState;
 }

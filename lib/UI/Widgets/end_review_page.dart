@@ -56,16 +56,17 @@ class _EndReviewPage extends State<EndReviewPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 ElevatedButton(
-                    onPressed: () {
-                      BlocProvider.of<ReviewBloc>(context)
-                          .add(ReviewAgainEvent());
-                    },
+                    onPressed: () => BlocProvider.of<ReviewBloc>(context)
+                        .add(ReviewRestartCardsEvent()),
                     child: const Text("Review Again")),
                 ElevatedButton(
-                    onPressed: () {}, child: const Text("Flashcard Practice")),
+                    onPressed: () => null,
+                    child: const Text("Flashcard Practice")),
                 ElevatedButton(
-                    onPressed: () {}, child: const Text("Spelling Practice")),
-                ElevatedButton(onPressed: () {}, child: const Text("Quiz")),
+                    onPressed: () => null,
+                    child: const Text("Spelling Practice")),
+                ElevatedButton(
+                    onPressed: () => null, child: const Text("Quiz")),
               ],
             ),
           ],

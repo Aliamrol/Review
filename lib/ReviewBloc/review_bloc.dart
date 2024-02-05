@@ -5,47 +5,47 @@ import 'package:uni/Entities/card_entity.dart';
 import 'package:uni/locator.dart';
 import 'package:uni/repository/review_repository.dart';
 import '../Entities/lesson_entity.dart';
-import '../repository/data.dart';
+import '../repository/url_utils.dart';
 import 'review_state.dart';
 
 part 'review_event.dart';
 
-class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
+class ReviewBloc extends Bloc<ReviewEvent, ReviewStates> {
   late LessonEntity lessonEntity;
 
   List<CardEntity> getCards() {
     return lessonEntity.cards;
   }
 
-  ReviewBloc() : super(const ReviewState.loading()) {
+  ReviewBloc() : super(const ReviewStates.loading()) {
     on<ReviewEvent>((event, emit) async {
-      if (event is ReviewInitialEvent) {
-        emit(const ReviewState.loading());
+      if (event is ReviewLoadCardsEvent) {
+        emit(const ReviewStates.loading());
         Response? response;
         try {
           response = await locator
               .get<ReviewRepository>()
-              .getLessonData(Data.lessonApiUrl);
+              .getLessonData(UrlUtils.lessonApiUrl);
           lessonEntity = LessonEntity.fromJson(response.data);
-          emit(ReviewState.complete(lessonEntity: lessonEntity));
+          emit(ReviewStates.complete(lessonEntity: lessonEntity));
         } catch (e) {
           if (kDebugMode) {
             print(e);
           }
-          emit(ReviewState.error(e.toString(), response?.statusCode));
+          emit(ReviewStates.error(e.toString(), response?.statusCode));
         }
       }
-      if (event is ReviewNextEvent) {
-        emit(const ReviewState.idle());
-        emit(const ReviewState.next());
+      if (event is ReviewMoveToNextCardEvent) {
+        emit(const ReviewStates.idle());
+        emit(const ReviewStates.moveToNextCard());
       }
-      if (event is ReviewPreviousEvent) {
-        emit(const ReviewState.idle());
-        emit(const ReviewState.previous());
+      if (event is ReviewMoveToPreviousCardEvent) {
+        emit(const ReviewStates.idle());
+        emit(const ReviewStates.moveToPreviousCard());
       }
-      if (event is ReviewAgainEvent) {
-        emit(const ReviewState.idle());
-        emit(const ReviewState.again());
+      if (event is ReviewRestartCardsEvent) {
+        emit(const ReviewStates.idle());
+        emit(const ReviewStates.restartReview());
       }
     });
   }

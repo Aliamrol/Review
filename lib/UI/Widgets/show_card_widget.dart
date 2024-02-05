@@ -1,4 +1,3 @@
-import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -58,7 +57,10 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                       content: const Text("Please Check connection"),
                       actions: [
                         ElevatedButton(
-                            onPressed: () {}, child: const Text("Again")),
+                            onPressed: () =>
+                                BlocProvider.of<ReviewBloc>(context)
+                                    .add(ReviewLoadCardsEvent()),
+                            child: const Text("Try Again")),
                       ],
                     );
                   },
@@ -70,20 +72,18 @@ class _ShowCardWidget extends State<ShowCardWidget> {
               Text(
                 widget.cardEntity.title ?? "TITLE",
                 style: TextStyle(
-                    fontSize: MediaQuery.of(context).textScaleFactor * 50,
+                    fontSize: MediaQuery.of(context).textScaleFactor * 40,
                     fontWeight: FontWeight.w400),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Visibility(
-                    visible: widget.value == 0 ? false : true,
+                    visible: widget.value != 0,
                     child: IconButton(
                         tooltip: "Previous Page",
-                        onPressed: () {
-                          BlocProvider.of<ReviewBloc>(context)
-                              .add(ReviewPreviousEvent());
-                        },
+                        onPressed: () => BlocProvider.of<ReviewBloc>(context)
+                            .add(ReviewMoveToPreviousCardEvent()),
                         icon: const Icon(CupertinoIcons.arrow_left)),
                   ),
                   SizedBox(
@@ -91,10 +91,8 @@ class _ShowCardWidget extends State<ShowCardWidget> {
                   ),
                   IconButton(
                       tooltip: "Next Page",
-                      onPressed: () {
-                        BlocProvider.of<ReviewBloc>(context)
-                            .add(ReviewNextEvent());
-                      },
+                      onPressed: () => BlocProvider.of<ReviewBloc>(context)
+                          .add(ReviewMoveToNextCardEvent()),
                       icon: const Icon(CupertinoIcons.arrow_right)),
                 ],
               ),
@@ -111,8 +109,6 @@ class _ShowCardWidget extends State<ShowCardWidget> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.0625,
               ),
-              Text(widget.cardEntity.description ??
-                  "description description description")
             ],
           )
         ],

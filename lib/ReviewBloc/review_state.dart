@@ -5,20 +5,21 @@ import '../Entities/lesson_entity.dart';
 part 'review_state.freezed.dart';
 
 @freezed
-class ReviewState with _$ReviewState {
-  const factory ReviewState.loading() = _ReviewLoadingState;
+class ReviewStates with _$ReviewState {
+  const factory ReviewStates.loading() = _ReviewLoadingState;
 
-  const factory ReviewState.error(String? msg, int? statusCode) =
+  const factory ReviewStates.error(String? msg, int? statusCode) =
       _ReviewErrorState;
 
-  const factory ReviewState.next() = _ReviewNextState;
+  const factory ReviewStates.moveToNextCard() = _ReviewMoveToNextCardState;
 
-  const factory ReviewState.previous() = _ReviewPreviousState;
+  const factory ReviewStates.moveToPreviousCard() =
+      _ReviewMoveToPreviousCardState;
 
-  const factory ReviewState.complete({required LessonEntity lessonEntity}) =
+  const factory ReviewStates.complete({required LessonEntity lessonEntity}) =
       _ReviewCompleteState;
 
-  const factory ReviewState.again() = _ReviewAgainState;
+  const factory ReviewStates.restartReview() = _ReviewRestartState;
 
-  const factory ReviewState.idle() = _ReviewIdleState;
+  const factory ReviewStates.idle() = _ReviewIdleState;
 }

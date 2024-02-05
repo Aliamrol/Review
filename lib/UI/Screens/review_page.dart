@@ -20,7 +20,7 @@ class _ReviewPageState extends State<ReviewPage> {
   void initState() {
     // request Data and bloc set loading State
     reviewBloc = BlocProvider.of<ReviewBloc>(context);
-    reviewBloc.add(ReviewInitialEvent());
+    reviewBloc.add(ReviewLoadCardsEvent());
     super.initState();
   }
 
@@ -28,7 +28,7 @@ class _ReviewPageState extends State<ReviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // must implement with page view builder
-      body: BlocConsumer<ReviewBloc, ReviewState>(
+      body: BlocConsumer<ReviewBloc, ReviewStates>(
         listener: (context, state) {
           state.whenOrNull(
             next: () {
@@ -65,7 +65,7 @@ class _ReviewPageState extends State<ReviewPage> {
                       height: MediaQuery.of(context).size.height * 0.05,
                     ),
                     ElevatedButton(
-                        onPressed: () => reviewBloc.add(ReviewInitialEvent()),
+                        onPressed: () => reviewBloc.add(ReviewLoadCardsEvent()),
                         child: const Text("Try Again"))
                   ],
                 ),
