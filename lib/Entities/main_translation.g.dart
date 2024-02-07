@@ -3,6 +3,115 @@
 part of 'main_translation.dart';
 
 // **************************************************************************
+// TypeAdapterGenerator
+// **************************************************************************
+
+class MainTranslationAdapter extends TypeAdapter<MainTranslation> {
+  @override
+  final int typeId = 2;
+
+  @override
+  MainTranslation read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return MainTranslation(
+      fields[0] as int,
+      (fields[1] as Map).cast<String, dynamic>(),
+      fields[2] as WordPhoto,
+      fields[3] as int,
+      fields[4] as String,
+      fields[5] as dynamic,
+      fields[6] as String,
+      fields[7] as String,
+      fields[8] as String,
+      fields[9] as String,
+      (fields[10] as List)
+          .map((dynamic e) => (e as Map).cast<String, dynamic>())
+          .toList(),
+      (fields[11] as List).cast<dynamic>(),
+      (fields[12] as List).cast<dynamic>(),
+      fields[13] as String,
+      fields[14] as dynamic,
+      fields[15] as String,
+      fields[16] as dynamic,
+      fields[17] as String,
+      (fields[18] as Map).cast<String, dynamic>(),
+      fields[19] as String,
+      fields[20] as String,
+      fields[21] as String,
+      (fields[22] as Map).cast<String, dynamic>(),
+      fields[23] as String,
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, MainTranslation obj) {
+    writer
+      ..writeByte(24)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.partOfSpeech)
+      ..writeByte(2)
+      ..write(obj.wordPhoto)
+      ..writeByte(3)
+      ..write(obj.position)
+      ..writeByte(4)
+      ..write(obj.translation)
+      ..writeByte(5)
+      ..write(obj.alternativeTranslation)
+      ..writeByte(6)
+      ..write(obj.otherTranslations)
+      ..writeByte(7)
+      ..write(obj.pronunciation)
+      ..writeByte(8)
+      ..write(obj.descriptionTitle)
+      ..writeByte(9)
+      ..write(obj.description)
+      ..writeByte(10)
+      ..write(obj.synonyms)
+      ..writeByte(11)
+      ..write(obj.antonyms)
+      ..writeByte(12)
+      ..write(obj.tags)
+      ..writeByte(13)
+      ..write(obj.level)
+      ..writeByte(14)
+      ..write(obj.hideNLPExamples)
+      ..writeByte(15)
+      ..write(obj.visibility)
+      ..writeByte(16)
+      ..write(obj.wiki)
+      ..writeByte(17)
+      ..write(obj.updatedAt)
+      ..writeByte(18)
+      ..write(obj.localizedProperties)
+      ..writeByte(19)
+      ..write(obj.automatedTranslatorDefinition)
+      ..writeByte(20)
+      ..write(obj.title)
+      ..writeByte(21)
+      ..write(obj.type)
+      ..writeByte(22)
+      ..write(obj.hashedFields)
+      ..writeByte(23)
+      ..write(obj.titleVoice);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MainTranslationAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

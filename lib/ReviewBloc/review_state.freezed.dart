@@ -12,7 +12,7 @@ part of 'review_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ReviewStates {
@@ -106,25 +106,25 @@ class _$ReviewStatesCopyWithImpl<$Res, $Val extends ReviewStates>
 }
 
 /// @nodoc
-abstract class _$$_ReviewLoadingStateCopyWith<$Res> {
-  factory _$$_ReviewLoadingStateCopyWith(_$_ReviewLoadingState value,
-          $Res Function(_$_ReviewLoadingState) then) =
-      __$$_ReviewLoadingStateCopyWithImpl<$Res>;
+abstract class _$$ReviewLoadingStateImplCopyWith<$Res> {
+  factory _$$ReviewLoadingStateImplCopyWith(_$ReviewLoadingStateImpl value,
+          $Res Function(_$ReviewLoadingStateImpl) then) =
+      __$$ReviewLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReviewLoadingStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewLoadingState>
-    implements _$$_ReviewLoadingStateCopyWith<$Res> {
-  __$$_ReviewLoadingStateCopyWithImpl(
-      _$_ReviewLoadingState _value, $Res Function(_$_ReviewLoadingState) _then)
+class __$$ReviewLoadingStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewLoadingStateImpl>
+    implements _$$ReviewLoadingStateImplCopyWith<$Res> {
+  __$$ReviewLoadingStateImplCopyWithImpl(_$ReviewLoadingStateImpl _value,
+      $Res Function(_$ReviewLoadingStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReviewLoadingState implements _ReviewLoadingState {
-  const _$_ReviewLoadingState();
+class _$ReviewLoadingStateImpl implements _ReviewLoadingState {
+  const _$ReviewLoadingStateImpl();
 
   @override
   String toString() {
@@ -132,9 +132,9 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ReviewLoadingState);
+        (other.runtimeType == runtimeType && other is _$ReviewLoadingStateImpl);
   }
 
   @override
@@ -235,24 +235,24 @@ class _$_ReviewLoadingState implements _ReviewLoadingState {
 }
 
 abstract class _ReviewLoadingState implements ReviewStates {
-  const factory _ReviewLoadingState() = _$_ReviewLoadingState;
+  const factory _ReviewLoadingState() = _$ReviewLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_ReviewErrorStateCopyWith<$Res> {
-  factory _$$_ReviewErrorStateCopyWith(
-          _$_ReviewErrorState value, $Res Function(_$_ReviewErrorState) then) =
-      __$$_ReviewErrorStateCopyWithImpl<$Res>;
+abstract class _$$ReviewErrorStateImplCopyWith<$Res> {
+  factory _$$ReviewErrorStateImplCopyWith(_$ReviewErrorStateImpl value,
+          $Res Function(_$ReviewErrorStateImpl) then) =
+      __$$ReviewErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? msg, int? statusCode});
 }
 
 /// @nodoc
-class __$$_ReviewErrorStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewErrorState>
-    implements _$$_ReviewErrorStateCopyWith<$Res> {
-  __$$_ReviewErrorStateCopyWithImpl(
-      _$_ReviewErrorState _value, $Res Function(_$_ReviewErrorState) _then)
+class __$$ReviewErrorStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewErrorStateImpl>
+    implements _$$ReviewErrorStateImplCopyWith<$Res> {
+  __$$ReviewErrorStateImplCopyWithImpl(_$ReviewErrorStateImpl _value,
+      $Res Function(_$ReviewErrorStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -261,7 +261,7 @@ class __$$_ReviewErrorStateCopyWithImpl<$Res>
     Object? msg = freezed,
     Object? statusCode = freezed,
   }) {
-    return _then(_$_ReviewErrorState(
+    return _then(_$ReviewErrorStateImpl(
       freezed == msg
           ? _value.msg
           : msg // ignore: cast_nullable_to_non_nullable
@@ -276,8 +276,8 @@ class __$$_ReviewErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewErrorState implements _ReviewErrorState {
-  const _$_ReviewErrorState(this.msg, this.statusCode);
+class _$ReviewErrorStateImpl implements _ReviewErrorState {
+  const _$ReviewErrorStateImpl(this.msg, this.statusCode);
 
   @override
   final String? msg;
@@ -290,10 +290,10 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReviewErrorState &&
+            other is _$ReviewErrorStateImpl &&
             (identical(other.msg, msg) || other.msg == msg) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode));
@@ -305,8 +305,9 @@ class _$_ReviewErrorState implements _ReviewErrorState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReviewErrorStateCopyWith<_$_ReviewErrorState> get copyWith =>
-      __$$_ReviewErrorStateCopyWithImpl<_$_ReviewErrorState>(this, _$identity);
+  _$$ReviewErrorStateImplCopyWith<_$ReviewErrorStateImpl> get copyWith =>
+      __$$ReviewErrorStateImplCopyWithImpl<_$ReviewErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -404,37 +405,37 @@ class _$_ReviewErrorState implements _ReviewErrorState {
 
 abstract class _ReviewErrorState implements ReviewStates {
   const factory _ReviewErrorState(final String? msg, final int? statusCode) =
-      _$_ReviewErrorState;
+      _$ReviewErrorStateImpl;
 
   String? get msg;
   int? get statusCode;
   @JsonKey(ignore: true)
-  _$$_ReviewErrorStateCopyWith<_$_ReviewErrorState> get copyWith =>
+  _$$ReviewErrorStateImplCopyWith<_$ReviewErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ReviewMoveToNextCardStateCopyWith<$Res> {
-  factory _$$_ReviewMoveToNextCardStateCopyWith(
-          _$_ReviewMoveToNextCardState value,
-          $Res Function(_$_ReviewMoveToNextCardState) then) =
-      __$$_ReviewMoveToNextCardStateCopyWithImpl<$Res>;
+abstract class _$$ReviewMoveToNextCardStateImplCopyWith<$Res> {
+  factory _$$ReviewMoveToNextCardStateImplCopyWith(
+          _$ReviewMoveToNextCardStateImpl value,
+          $Res Function(_$ReviewMoveToNextCardStateImpl) then) =
+      __$$ReviewMoveToNextCardStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReviewMoveToNextCardStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewMoveToNextCardState>
-    implements _$$_ReviewMoveToNextCardStateCopyWith<$Res> {
-  __$$_ReviewMoveToNextCardStateCopyWithImpl(
-      _$_ReviewMoveToNextCardState _value,
-      $Res Function(_$_ReviewMoveToNextCardState) _then)
+class __$$ReviewMoveToNextCardStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewMoveToNextCardStateImpl>
+    implements _$$ReviewMoveToNextCardStateImplCopyWith<$Res> {
+  __$$ReviewMoveToNextCardStateImplCopyWithImpl(
+      _$ReviewMoveToNextCardStateImpl _value,
+      $Res Function(_$ReviewMoveToNextCardStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReviewMoveToNextCardState implements _ReviewMoveToNextCardState {
-  const _$_ReviewMoveToNextCardState();
+class _$ReviewMoveToNextCardStateImpl implements _ReviewMoveToNextCardState {
+  const _$ReviewMoveToNextCardStateImpl();
 
   @override
   String toString() {
@@ -442,10 +443,10 @@ class _$_ReviewMoveToNextCardState implements _ReviewMoveToNextCardState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReviewMoveToNextCardState);
+            other is _$ReviewMoveToNextCardStateImpl);
   }
 
   @override
@@ -546,32 +547,33 @@ class _$_ReviewMoveToNextCardState implements _ReviewMoveToNextCardState {
 }
 
 abstract class _ReviewMoveToNextCardState implements ReviewStates {
-  const factory _ReviewMoveToNextCardState() = _$_ReviewMoveToNextCardState;
+  const factory _ReviewMoveToNextCardState() = _$ReviewMoveToNextCardStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_ReviewMoveToPreviousCardStateCopyWith<$Res> {
-  factory _$$_ReviewMoveToPreviousCardStateCopyWith(
-          _$_ReviewMoveToPreviousCardState value,
-          $Res Function(_$_ReviewMoveToPreviousCardState) then) =
-      __$$_ReviewMoveToPreviousCardStateCopyWithImpl<$Res>;
+abstract class _$$ReviewMoveToPreviousCardStateImplCopyWith<$Res> {
+  factory _$$ReviewMoveToPreviousCardStateImplCopyWith(
+          _$ReviewMoveToPreviousCardStateImpl value,
+          $Res Function(_$ReviewMoveToPreviousCardStateImpl) then) =
+      __$$ReviewMoveToPreviousCardStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReviewMoveToPreviousCardStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewMoveToPreviousCardState>
-    implements _$$_ReviewMoveToPreviousCardStateCopyWith<$Res> {
-  __$$_ReviewMoveToPreviousCardStateCopyWithImpl(
-      _$_ReviewMoveToPreviousCardState _value,
-      $Res Function(_$_ReviewMoveToPreviousCardState) _then)
+class __$$ReviewMoveToPreviousCardStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res,
+        _$ReviewMoveToPreviousCardStateImpl>
+    implements _$$ReviewMoveToPreviousCardStateImplCopyWith<$Res> {
+  __$$ReviewMoveToPreviousCardStateImplCopyWithImpl(
+      _$ReviewMoveToPreviousCardStateImpl _value,
+      $Res Function(_$ReviewMoveToPreviousCardStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReviewMoveToPreviousCardState
+class _$ReviewMoveToPreviousCardStateImpl
     implements _ReviewMoveToPreviousCardState {
-  const _$_ReviewMoveToPreviousCardState();
+  const _$ReviewMoveToPreviousCardStateImpl();
 
   @override
   String toString() {
@@ -579,10 +581,10 @@ class _$_ReviewMoveToPreviousCardState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReviewMoveToPreviousCardState);
+            other is _$ReviewMoveToPreviousCardStateImpl);
   }
 
   @override
@@ -684,24 +686,24 @@ class _$_ReviewMoveToPreviousCardState
 
 abstract class _ReviewMoveToPreviousCardState implements ReviewStates {
   const factory _ReviewMoveToPreviousCardState() =
-      _$_ReviewMoveToPreviousCardState;
+      _$ReviewMoveToPreviousCardStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_ReviewCompleteStateCopyWith<$Res> {
-  factory _$$_ReviewCompleteStateCopyWith(_$_ReviewCompleteState value,
-          $Res Function(_$_ReviewCompleteState) then) =
-      __$$_ReviewCompleteStateCopyWithImpl<$Res>;
+abstract class _$$ReviewCompleteStateImplCopyWith<$Res> {
+  factory _$$ReviewCompleteStateImplCopyWith(_$ReviewCompleteStateImpl value,
+          $Res Function(_$ReviewCompleteStateImpl) then) =
+      __$$ReviewCompleteStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LessonEntity lessonEntity});
 }
 
 /// @nodoc
-class __$$_ReviewCompleteStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewCompleteState>
-    implements _$$_ReviewCompleteStateCopyWith<$Res> {
-  __$$_ReviewCompleteStateCopyWithImpl(_$_ReviewCompleteState _value,
-      $Res Function(_$_ReviewCompleteState) _then)
+class __$$ReviewCompleteStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewCompleteStateImpl>
+    implements _$$ReviewCompleteStateImplCopyWith<$Res> {
+  __$$ReviewCompleteStateImplCopyWithImpl(_$ReviewCompleteStateImpl _value,
+      $Res Function(_$ReviewCompleteStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -709,7 +711,7 @@ class __$$_ReviewCompleteStateCopyWithImpl<$Res>
   $Res call({
     Object? lessonEntity = null,
   }) {
-    return _then(_$_ReviewCompleteState(
+    return _then(_$ReviewCompleteStateImpl(
       lessonEntity: null == lessonEntity
           ? _value.lessonEntity
           : lessonEntity // ignore: cast_nullable_to_non_nullable
@@ -720,8 +722,8 @@ class __$$_ReviewCompleteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ReviewCompleteState implements _ReviewCompleteState {
-  const _$_ReviewCompleteState({required this.lessonEntity});
+class _$ReviewCompleteStateImpl implements _ReviewCompleteState {
+  const _$ReviewCompleteStateImpl({required this.lessonEntity});
 
   @override
   final LessonEntity lessonEntity;
@@ -732,10 +734,10 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ReviewCompleteState &&
+            other is _$ReviewCompleteStateImpl &&
             (identical(other.lessonEntity, lessonEntity) ||
                 other.lessonEntity == lessonEntity));
   }
@@ -746,8 +748,8 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReviewCompleteStateCopyWith<_$_ReviewCompleteState> get copyWith =>
-      __$$_ReviewCompleteStateCopyWithImpl<_$_ReviewCompleteState>(
+  _$$ReviewCompleteStateImplCopyWith<_$ReviewCompleteStateImpl> get copyWith =>
+      __$$ReviewCompleteStateImplCopyWithImpl<_$ReviewCompleteStateImpl>(
           this, _$identity);
 
   @override
@@ -846,34 +848,34 @@ class _$_ReviewCompleteState implements _ReviewCompleteState {
 
 abstract class _ReviewCompleteState implements ReviewStates {
   const factory _ReviewCompleteState(
-      {required final LessonEntity lessonEntity}) = _$_ReviewCompleteState;
+      {required final LessonEntity lessonEntity}) = _$ReviewCompleteStateImpl;
 
   LessonEntity get lessonEntity;
   @JsonKey(ignore: true)
-  _$$_ReviewCompleteStateCopyWith<_$_ReviewCompleteState> get copyWith =>
+  _$$ReviewCompleteStateImplCopyWith<_$ReviewCompleteStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ReviewRestartStateCopyWith<$Res> {
-  factory _$$_ReviewRestartStateCopyWith(_$_ReviewRestartState value,
-          $Res Function(_$_ReviewRestartState) then) =
-      __$$_ReviewRestartStateCopyWithImpl<$Res>;
+abstract class _$$ReviewRestartStateImplCopyWith<$Res> {
+  factory _$$ReviewRestartStateImplCopyWith(_$ReviewRestartStateImpl value,
+          $Res Function(_$ReviewRestartStateImpl) then) =
+      __$$ReviewRestartStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReviewRestartStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewRestartState>
-    implements _$$_ReviewRestartStateCopyWith<$Res> {
-  __$$_ReviewRestartStateCopyWithImpl(
-      _$_ReviewRestartState _value, $Res Function(_$_ReviewRestartState) _then)
+class __$$ReviewRestartStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewRestartStateImpl>
+    implements _$$ReviewRestartStateImplCopyWith<$Res> {
+  __$$ReviewRestartStateImplCopyWithImpl(_$ReviewRestartStateImpl _value,
+      $Res Function(_$ReviewRestartStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReviewRestartState implements _ReviewRestartState {
-  const _$_ReviewRestartState();
+class _$ReviewRestartStateImpl implements _ReviewRestartState {
+  const _$ReviewRestartStateImpl();
 
   @override
   String toString() {
@@ -881,9 +883,9 @@ class _$_ReviewRestartState implements _ReviewRestartState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ReviewRestartState);
+        (other.runtimeType == runtimeType && other is _$ReviewRestartStateImpl);
   }
 
   @override
@@ -984,29 +986,29 @@ class _$_ReviewRestartState implements _ReviewRestartState {
 }
 
 abstract class _ReviewRestartState implements ReviewStates {
-  const factory _ReviewRestartState() = _$_ReviewRestartState;
+  const factory _ReviewRestartState() = _$ReviewRestartStateImpl;
 }
 
 /// @nodoc
-abstract class _$$_ReviewIdleStateCopyWith<$Res> {
-  factory _$$_ReviewIdleStateCopyWith(
-          _$_ReviewIdleState value, $Res Function(_$_ReviewIdleState) then) =
-      __$$_ReviewIdleStateCopyWithImpl<$Res>;
+abstract class _$$ReviewIdleStateImplCopyWith<$Res> {
+  factory _$$ReviewIdleStateImplCopyWith(_$ReviewIdleStateImpl value,
+          $Res Function(_$ReviewIdleStateImpl) then) =
+      __$$ReviewIdleStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ReviewIdleStateCopyWithImpl<$Res>
-    extends _$ReviewStatesCopyWithImpl<$Res, _$_ReviewIdleState>
-    implements _$$_ReviewIdleStateCopyWith<$Res> {
-  __$$_ReviewIdleStateCopyWithImpl(
-      _$_ReviewIdleState _value, $Res Function(_$_ReviewIdleState) _then)
+class __$$ReviewIdleStateImplCopyWithImpl<$Res>
+    extends _$ReviewStatesCopyWithImpl<$Res, _$ReviewIdleStateImpl>
+    implements _$$ReviewIdleStateImplCopyWith<$Res> {
+  __$$ReviewIdleStateImplCopyWithImpl(
+      _$ReviewIdleStateImpl _value, $Res Function(_$ReviewIdleStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ReviewIdleState implements _ReviewIdleState {
-  const _$_ReviewIdleState();
+class _$ReviewIdleStateImpl implements _ReviewIdleState {
+  const _$ReviewIdleStateImpl();
 
   @override
   String toString() {
@@ -1014,9 +1016,9 @@ class _$_ReviewIdleState implements _ReviewIdleState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ReviewIdleState);
+        (other.runtimeType == runtimeType && other is _$ReviewIdleStateImpl);
   }
 
   @override
@@ -1117,5 +1119,5 @@ class _$_ReviewIdleState implements _ReviewIdleState {
 }
 
 abstract class _ReviewIdleState implements ReviewStates {
-  const factory _ReviewIdleState() = _$_ReviewIdleState;
+  const factory _ReviewIdleState() = _$ReviewIdleStateImpl;
 }
