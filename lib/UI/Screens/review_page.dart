@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uni/UI/Widgets/end_review_page.dart';
@@ -65,7 +66,7 @@ class _ReviewPageState extends State<ReviewPage> {
                 ),
               );
             },
-            loading: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const Center(child: CupertinoActivityIndicator()),
             orElse: () {
               return PageView.builder(
                 itemCount: reviewBloc.lessonEntity.wordsCount + 1,

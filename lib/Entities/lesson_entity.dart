@@ -38,8 +38,9 @@ class LessonEntity {
       this.photoThumbnail,
       this.hashedFields);
 
-  factory LessonEntity.fromJson(Map<String, dynamic> json) =>
-      _$LessonEntityFromJson(json);
+  factory LessonEntity.fromJson(Map<String, dynamic> json) {
+    return _$LessonEntityFromJson(json);
+  }
 
   Map<String, dynamic> toJson() => _$LessonEntityToJson(this);
 }
